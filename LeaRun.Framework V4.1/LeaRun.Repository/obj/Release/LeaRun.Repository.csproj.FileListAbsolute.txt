@@ -1,0 +1,15 @@
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\LeaRun.Repository.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\LeaRun.Repository.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\LeaRun.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\LeaRun.Utilities.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\log4net.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\Oracle.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\MySql.Data.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\System.Data.SQLite.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\SharpZipLib.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\Newtonsoft.Json.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\LeaRun.DataAccess.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\bin\Release\LeaRun.Utilities.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\obj\Release\LeaRun.Repository.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\obj\Release\LeaRun.Repository.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Repository\obj\Release\LeaRun.Repository.pdb

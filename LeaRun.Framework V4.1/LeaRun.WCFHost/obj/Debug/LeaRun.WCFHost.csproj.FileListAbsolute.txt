@@ -1,0 +1,14 @@
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.pdb

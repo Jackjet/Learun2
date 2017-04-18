@@ -1,0 +1,14 @@
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFLibrary\bin\Debug\LeaRun.WCFLibrary.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFLibrary\bin\Debug\LeaRun.WCFLibrary.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\bin\Debug\LeaRun.WCFLibrary.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\bin\Debug\LeaRun.WCFLibrary.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\bin\Debug\LeaRun.WCFLibrary.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\bin\Debug\LeaRun.WCFLibrary.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFLibrary\obj\Debug\LeaRun.WCFLibrary.pdb

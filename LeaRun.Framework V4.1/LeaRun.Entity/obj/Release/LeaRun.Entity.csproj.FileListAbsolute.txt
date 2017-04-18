@@ -1,0 +1,16 @@
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\LeaRun.Entity.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\LeaRun.Entity.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\EntityFramework.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\LeaRun.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\LeaRun.Utilities.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\log4net.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\Oracle.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\MySql.Data.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\System.Data.SQLite.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\SharpZipLib.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\Newtonsoft.Json.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\LeaRun.DataAccess.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\bin\Release\LeaRun.Utilities.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\obj\Release\LeaRun.Entity.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\obj\Release\LeaRun.Entity.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Entity\obj\Release\LeaRun.Entity.pdb

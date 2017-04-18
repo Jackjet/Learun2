@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LeaRunFramework_BaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="LeaRunFramework_BaseModelStoreContainer">
+    <EntitySet Name="Base_BackupJob" EntityType="LeaRunFramework_BaseModel.Store.Base_BackupJob" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Button" EntityType="LeaRunFramework_BaseModel.Store.Base_Button" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ButtonPermission" EntityType="LeaRunFramework_BaseModel.Store.Base_ButtonPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_CodeRule" EntityType="LeaRunFramework_BaseModel.Store.Base_CodeRule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_CodeRuleDetail" EntityType="LeaRunFramework_BaseModel.Store.Base_CodeRuleDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Company" EntityType="LeaRunFramework_BaseModel.Store.Base_Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_DataDictionary" EntityType="LeaRunFramework_BaseModel.Store.Base_DataDictionary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_DataDictionaryDetail" EntityType="LeaRunFramework_BaseModel.Store.Base_DataDictionaryDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_DataScopePermission" EntityType="LeaRunFramework_BaseModel.Store.Base_DataScopePermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Department" EntityType="LeaRunFramework_BaseModel.Store.Base_Department" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Email" EntityType="LeaRunFramework_BaseModel.Store.Base_Email" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_EmailAccessory" EntityType="LeaRunFramework_BaseModel.Store.Base_EmailAccessory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_EmailAddressee" EntityType="LeaRunFramework_BaseModel.Store.Base_EmailAddressee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_EmailCategory" EntityType="LeaRunFramework_BaseModel.Store.Base_EmailCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Employee" EntityType="LeaRunFramework_BaseModel.Store.Base_Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ExcelImport" EntityType="LeaRunFramework_BaseModel.Store.Base_ExcelImport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ExcelImportDetail" EntityType="LeaRunFramework_BaseModel.Store.Base_ExcelImportDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Form" EntityType="LeaRunFramework_BaseModel.Store.Base_Form" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_FormKeyValue" EntityType="LeaRunFramework_BaseModel.Store.Base_FormKeyValue" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_GroupUser" EntityType="LeaRunFramework_BaseModel.Store.Base_GroupUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Language" EntityType="LeaRunFramework_BaseModel.Store.Base_Language" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Module" EntityType="LeaRunFramework_BaseModel.Store.Base_Module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ModulePermission" EntityType="LeaRunFramework_BaseModel.Store.Base_ModulePermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_NetworkFile" EntityType="LeaRunFramework_BaseModel.Store.Base_NetworkFile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_NetworkFolder" EntityType="LeaRunFramework_BaseModel.Store.Base_NetworkFolder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ObjectUserRelation" EntityType="LeaRunFramework_BaseModel.Store.Base_ObjectUserRelation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_PhoneNote" EntityType="LeaRunFramework_BaseModel.Store.Base_PhoneNote" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Post" EntityType="LeaRunFramework_BaseModel.Store.Base_Post" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ProvinceCity" EntityType="LeaRunFramework_BaseModel.Store.Base_ProvinceCity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_QueryRecord" EntityType="LeaRunFramework_BaseModel.Store.Base_QueryRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Roles" EntityType="LeaRunFramework_BaseModel.Store.Base_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_Shortcuts" EntityType="LeaRunFramework_BaseModel.Store.Base_Shortcuts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_SysLog" EntityType="LeaRunFramework_BaseModel.Store.Base_SysLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_SysLogDetail" EntityType="LeaRunFramework_BaseModel.Store.Base_SysLogDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_User" EntityType="LeaRunFramework_BaseModel.Store.Base_User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_View" EntityType="LeaRunFramework_BaseModel.Store.Base_View" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ViewPermission" EntityType="LeaRunFramework_BaseModel.Store.Base_ViewPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ViewWhere" EntityType="LeaRunFramework_BaseModel.Store.Base_ViewWhere" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Base_ViewWherePermission" EntityType="LeaRunFramework_BaseModel.Store.Base_ViewWherePermission" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Base_EmailAccessory_Base_Email" Association="LeaRunFramework_BaseModel.Store.FK_Base_EmailAccessory_Base_Email">
+      <End Role="Base_Email" EntitySet="Base_Email" />
+      <End Role="Base_EmailAccessory" EntitySet="Base_EmailAccessory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Base_EmailAddressee_Base_Email" Association="LeaRunFramework_BaseModel.Store.FK_Base_EmailAddressee_Base_Email">
+      <End Role="Base_Email" EntitySet="Base_Email" />
+      <End Role="Base_EmailAddressee" EntitySet="Base_EmailAddressee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Base_SysLogDetail_Base_SysLog" Association="LeaRunFramework_BaseModel.Store.FK_Base_SysLogDetail_Base_SysLog">
+      <End Role="Base_SysLog" EntitySet="Base_SysLog" />
+      <End Role="Base_SysLogDetail" EntitySet="Base_SysLogDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Base_BackupJob">
+    <Key>
+      <PropertyRef Name="BackupId" />
+    </Key>
+    <Property Name="BackupId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ServerName" Type="varchar" MaxLength="50" />
+    <Property Name="DbName" Type="varchar" MaxLength="50" />
+    <Property Name="JobName" Type="varchar" MaxLength="200" />
+    <Property Name="Mode" Type="varchar" MaxLength="50" />
+    <Property Name="StartTime" Type="varchar" MaxLength="50" />
+    <Property Name="FilePath" Type="varchar" MaxLength="200" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="varchar" MaxLength="20" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Button">
+    <Key>
+      <PropertyRef Name="ButtonId" />
+    </Key>
+    <Property Name="ButtonId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="JsEvent" Type="varchar" MaxLength="50" />
+    <Property Name="ActionEvent" Type="varchar" MaxLength="200" />
+    <Property Name="Split" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ButtonPermission">
+    <Key>
+      <PropertyRef Name="ButtonPermissionId" />
+    </Key>
+    <Property Name="ButtonPermissionId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleButtonId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_CodeRule">
+    <Key>
+      <PropertyRef Name="CodeRuleId" />
+    </Key>
+    <Property Name="CodeRuleId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_CodeRuleDetail">
+    <Key>
+      <PropertyRef Name="CodeRuleDetailId" />
+      <PropertyRef Name="CodeRuleId" />
+      <PropertyRef Name="SortCode" />
+    </Key>
+    <Property Name="CodeRuleDetailId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CodeRuleId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Consted" Type="varchar" MaxLength="50" />
+    <Property Name="AutoReset" Type="int" />
+    <Property Name="FixLength" Type="int" />
+    <Property Name="FormatStr" Type="varchar" MaxLength="50" />
+    <Property Name="StepValue" Type="int" />
+    <Property Name="InitValue" Type="int" />
+    <Property Name="FLength" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="FType" Type="varchar" MaxLength="50" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" Nullable="false" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" />
+    <Property Name="Nature" Type="varchar" MaxLength="50" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="ProvinceId" Type="varchar" MaxLength="50" />
+    <Property Name="Province" Type="varchar" MaxLength="50" />
+    <Property Name="CityId" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="CountyId" Type="varchar" MaxLength="50" />
+    <Property Name="County" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="AccountInfo" Type="varchar" MaxLength="200" />
+    <Property Name="Postalcode" Type="varchar" MaxLength="200" />
+    <Property Name="Web" Type="varchar" MaxLength="200" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_DataDictionary">
+    <Key>
+      <PropertyRef Name="DataDictionaryId" />
+    </Key>
+    <Property Name="DataDictionaryId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsTree" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_DataDictionaryDetail">
+    <Key>
+      <PropertyRef Name="DataDictionaryDetailId" />
+    </Key>
+    <Property Name="DataDictionaryDetailId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DataDictionaryId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_DataScopePermission">
+    <Key>
+      <PropertyRef Name="DataScopePermissionId" />
+    </Key>
+    <Property Name="DataScopePermissionId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ResourceId" Type="varchar" MaxLength="50" />
+    <Property Name="Condition" Type="text" />
+    <Property Name="ConditionJson" Type="text" />
+    <Property Name="ScopeType" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" />
+    <Property Name="Nature" Type="varchar" MaxLength="50" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Email">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="EmailId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Theme" Type="varchar" MaxLength="200" />
+    <Property Name="ThemeColour" Type="varchar" MaxLength="50" />
+    <Property Name="Content" Type="text" />
+    <Property Name="Addresser" Type="varchar" MaxLength="50" />
+    <Property Name="SendDate" Type="datetime" />
+    <Property Name="IsAccessory" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Receipt" Type="int" />
+    <Property Name="IsDelayed" Type="int" />
+    <Property Name="DelayedTime" Type="datetime" />
+    <Property Name="State" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_EmailAccessory">
+    <Key>
+      <PropertyRef Name="EmailAccessoryId" />
+    </Key>
+    <Property Name="EmailAccessoryId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="FilePath" Type="varchar" MaxLength="200" />
+    <Property Name="FileSize" Type="varchar" MaxLength="50" />
+    <Property Name="FileType" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Base_EmailAddressee">
+    <Key>
+      <PropertyRef Name="EmailAddresseeId" />
+    </Key>
+    <Property Name="EmailAddresseeId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="AddresseeId" Type="varchar" MaxLength="50" />
+    <Property Name="AddresseeName" Type="varchar" MaxLength="50" />
+    <Property Name="AddresseeIdState" Type="int" />
+    <Property Name="IsRead" Type="int" />
+    <Property Name="ReadCount" Type="int" />
+    <Property Name="ReadDate" Type="datetime" />
+    <Property Name="EndReadDate" Type="datetime" />
+    <Property Name="Highlight" Type="int" />
+    <Property Name="Backlog" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="DeleteMark" Type="int" />
+  </EntityType>
+  <EntityType Name="Base_EmailCategory">
+    <Key>
+      <PropertyRef Name="EmailCategoryId" />
+    </Key>
+    <Property Name="EmailCategoryId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="Photograph" Type="varchar" MaxLength="50" />
+    <Property Name="IDCard" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="BankCode" Type="varchar" MaxLength="50" />
+    <Property Name="OfficeCornet" Type="varchar" MaxLength="50" />
+    <Property Name="OfficePhone" Type="varchar" MaxLength="50" />
+    <Property Name="OfficeZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="OfficeAddress" Type="varchar" MaxLength="200" />
+    <Property Name="OfficeFax" Type="varchar" MaxLength="50" />
+    <Property Name="Education" Type="varchar" MaxLength="50" />
+    <Property Name="School" Type="varchar" MaxLength="50" />
+    <Property Name="GraduationDate" Type="datetime" />
+    <Property Name="Major" Type="varchar" MaxLength="50" />
+    <Property Name="Degree" Type="varchar" MaxLength="50" />
+    <Property Name="WorkingDate" Type="datetime" />
+    <Property Name="HomeZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="HomeAddress" Type="varchar" MaxLength="200" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+    <Property Name="HomeFax" Type="varchar" MaxLength="50" />
+    <Property Name="Province" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Area" Type="varchar" MaxLength="50" />
+    <Property Name="NativePlace" Type="varchar" MaxLength="50" />
+    <Property Name="Party" Type="varchar" MaxLength="50" />
+    <Property Name="Nation" Type="varchar" MaxLength="50" />
+    <Property Name="Nationality" Type="varchar" MaxLength="50" />
+    <Property Name="Duty" Type="varchar" MaxLength="50" />
+    <Property Name="WorkingProperty" Type="varchar" MaxLength="50" />
+    <Property Name="Competency" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyContact" Type="varchar" MaxLength="50" />
+    <Property Name="IsDimission" Type="int" />
+    <Property Name="DimissionDate" Type="datetime" />
+    <Property Name="DimissionCause" Type="varchar" MaxLength="200" />
+    <Property Name="DimissionWhither" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ExcelImport">
+    <Key>
+      <PropertyRef Name="ImportId" />
+    </Key>
+    <Property Name="ImportId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="ImportName" Type="varchar" MaxLength="50" />
+    <Property Name="ImportTable" Type="varchar" MaxLength="50" />
+    <Property Name="ImportTableName" Type="varchar" MaxLength="50" />
+    <Property Name="ImportFileName" Type="varchar" MaxLength="200" />
+    <Property Name="ErrorHanding" Type="int" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ExcelImportDetail">
+    <Key>
+      <PropertyRef Name="ImportDetailId" />
+    </Key>
+    <Property Name="ImportDetailId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ImportId" Type="varchar" MaxLength="50" />
+    <Property Name="ColumnName" Type="varchar" MaxLength="50" />
+    <Property Name="FieldName" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignTable" Type="varchar" MaxLength="200" />
+    <Property Name="BackField" Type="varchar" MaxLength="200" />
+    <Property Name="CompareField" Type="varchar" MaxLength="200" />
+    <Property Name="AttachCondition" Type="varchar" MaxLength="200" />
+    <Property Name="DataType" Type="int" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="FieldRemark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Form">
+    <Key>
+      <PropertyRef Name="FormId" />
+    </Key>
+    <Property Name="FormId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShowColumn" Type="int" />
+    <Property Name="FormStyle" Type="varchar" MaxLength="50" />
+    <Property Name="ShowWidth" Type="varchar" MaxLength="50" />
+    <Property Name="TableName" Type="varchar" MaxLength="50" />
+    <Property Name="FormType" Type="int" />
+    <Property Name="VersionNumber" Type="varchar" MaxLength="50" />
+    <Property Name="FormHtml" Type="text" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_FormKeyValue">
+    <Key>
+      <PropertyRef Name="FormKeyValueId" />
+    </Key>
+    <Property Name="FormKeyValueId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FormId" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectParameter" Type="text" />
+  </EntityType>
+  <EntityType Name="Base_GroupUser">
+    <Key>
+      <PropertyRef Name="GroupUserId" />
+    </Key>
+    <Property Name="GroupUserId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="BusinessCode" Type="varchar" MaxLength="50" />
+    <Property Name="BusinessName" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="text" />
+    <Property Name="FullValue" Type="varchar" MaxLength="200" />
+    <Property Name="Note" Type="varchar(max)" />
+    <Property Name="LanguageType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Module">
+    <Key>
+      <PropertyRef Name="ModuleId" />
+    </Key>
+    <Property Name="ModuleId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="200" />
+    <Property Name="Target" Type="varchar" MaxLength="50" />
+    <Property Name="Level" Type="int" />
+    <Property Name="Isexpand" Type="int" />
+    <Property Name="AllowButton" Type="int" />
+    <Property Name="AllowView" Type="int" />
+    <Property Name="AllowForm" Type="int" />
+    <Property Name="Authority" Type="int" />
+    <Property Name="DataScope" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ModulePermission">
+    <Key>
+      <PropertyRef Name="ModulePermissionId" />
+    </Key>
+    <Property Name="ModulePermissionId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_NetworkFile">
+    <Key>
+      <PropertyRef Name="NetworkFileId" />
+    </Key>
+    <Property Name="NetworkFileId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FolderId" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="200" />
+    <Property Name="FilePath" Type="varchar" MaxLength="200" />
+    <Property Name="FileSize" Type="varchar" MaxLength="50" />
+    <Property Name="FileExtensions" Type="varchar" MaxLength="50" />
+    <Property Name="FileType" Type="varchar" MaxLength="50" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="Sharing" Type="int" />
+    <Property Name="SharingFolderId" Type="varchar" MaxLength="50" />
+    <Property Name="SharingCreateDate" Type="datetime" />
+    <Property Name="SharingEndDate" Type="datetime" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_NetworkFolder">
+    <Key>
+      <PropertyRef Name="FolderId" />
+    </Key>
+    <Property Name="FolderId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="FolderName" Type="varchar" MaxLength="200" />
+    <Property Name="IsPublic" Type="int" />
+    <Property Name="Sharing" Type="int" />
+    <Property Name="SharingFolderId" Type="varchar" MaxLength="50" />
+    <Property Name="SharingCreateDate" Type="datetime" />
+    <Property Name="SharingEndDate" Type="datetime" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ObjectUserRelation">
+    <Key>
+      <PropertyRef Name="ObjectUserRelationId" />
+    </Key>
+    <Property Name="ObjectUserRelationId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_PhoneNote">
+    <Key>
+      <PropertyRef Name="PhoneNoteId" />
+    </Key>
+    <Property Name="PhoneNoteId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PhonenNumber" Type="varchar" MaxLength="50" />
+    <Property Name="SendContent" Type="varchar" MaxLength="200" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="SendStatus" Type="varchar" MaxLength="50" />
+    <Property Name="DeviceName" Type="varchar" MaxLength="200" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Post">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RoleId" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ProvinceCity">
+    <Key>
+      <PropertyRef Name="ProvinceCityId" />
+    </Key>
+    <Property Name="ProvinceCityId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_QueryRecord">
+    <Key>
+      <PropertyRef Name="QueryRecordId" />
+    </Key>
+    <Property Name="QueryRecordId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ConditionJson" Type="varchar(max)" />
+    <Property Name="ResourceShare" Type="int" />
+    <Property Name="NextDefault" Type="int" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_Shortcuts">
+    <Key>
+      <PropertyRef Name="ShortcutsId" />
+    </Key>
+    <Property Name="ShortcutsId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_SysLog">
+    <Key>
+      <PropertyRef Name="SysLogId" />
+    </Key>
+    <Property Name="SysLogId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="LogType" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddressName" Type="varchar" MaxLength="200" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_SysLogDetail">
+    <Key>
+      <PropertyRef Name="SysLogDetailId" />
+    </Key>
+    <Property Name="SysLogDetailId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SysLogId" Type="varchar" MaxLength="50" />
+    <Property Name="PropertyName" Type="varchar" MaxLength="50" />
+    <Property Name="PropertyField" Type="varchar" MaxLength="50" />
+    <Property Name="NewValue" Type="varchar(max)" />
+    <Property Name="OldValue" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Base_User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" />
+    <Property Name="InnerUser" Type="int" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Secretkey" Type="varchar" MaxLength="50" />
+    <Property Name="RealName" Type="varchar" MaxLength="50" />
+    <Property Name="Spell" Type="varchar" MaxLength="200" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="OICQ" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="ChangePasswordDate" Type="datetime" />
+    <Property Name="OpenId" Type="int" />
+    <Property Name="LogOnCount" Type="int" />
+    <Property Name="FirstVisit" Type="datetime" />
+    <Property Name="PreviousVisit" Type="datetime" />
+    <Property Name="LastVisit" Type="datetime" />
+    <Property Name="AuditStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AuditUserId" Type="varchar" MaxLength="50" />
+    <Property Name="AuditUserName" Type="varchar" MaxLength="50" />
+    <Property Name="AuditDateTime" Type="datetime" />
+    <Property Name="Online" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_View">
+    <Key>
+      <PropertyRef Name="ViewId" />
+    </Key>
+    <Property Name="ViewId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="FieldName" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShowName" Type="varchar" MaxLength="50" />
+    <Property Name="ColumnWidth" Type="int" />
+    <Property Name="TextAlign" Type="varchar" MaxLength="50" />
+    <Property Name="AllowShow" Type="int" />
+    <Property Name="AllowDerive" Type="int" />
+    <Property Name="CustomSwitch" Type="varchar(max)" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Base_ViewPermission">
+    <Key>
+      <PropertyRef Name="ViewPermissionId" />
+    </Key>
+    <Property Name="ViewPermissionId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ViewId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Base_ViewWhere">
+    <Key>
+      <PropertyRef Name="ViewWhereId" />
+    </Key>
+    <Property Name="ViewWhereId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ControlType" Type="varchar" MaxLength="50" />
+    <Property Name="ControlDefault" Type="varchar" MaxLength="200" />
+    <Property Name="ControlSource" Type="varchar" MaxLength="200" />
+    <Property Name="FieldName" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShowName" Type="varchar" MaxLength="50" />
+    <Property Name="AllowShow" Type="int" />
+    <Property Name="Enabled" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ControlCustom" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Base_ViewWherePermission">
+    <Key>
+      <PropertyRef Name="ViewWherePermissionId" />
+    </Key>
+    <Property Name="ViewWherePermissionId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ViewId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ViewWhereDetailId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Base_EmailAccessory_Base_Email">
+    <End Role="Base_Email" Type="LeaRunFramework_BaseModel.Store.Base_Email" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Base_EmailAccessory" Type="LeaRunFramework_BaseModel.Store.Base_EmailAccessory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Base_Email">
+        <PropertyRef Name="EmailId" />
+      </Principal>
+      <Dependent Role="Base_EmailAccessory">
+        <PropertyRef Name="EmailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Base_EmailAddressee_Base_Email">
+    <End Role="Base_Email" Type="LeaRunFramework_BaseModel.Store.Base_Email" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Base_EmailAddressee" Type="LeaRunFramework_BaseModel.Store.Base_EmailAddressee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Base_Email">
+        <PropertyRef Name="EmailId" />
+      </Principal>
+      <Dependent Role="Base_EmailAddressee">
+        <PropertyRef Name="EmailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Base_SysLogDetail_Base_SysLog">
+    <End Role="Base_SysLog" Type="LeaRunFramework_BaseModel.Store.Base_SysLog" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Base_SysLogDetail" Type="LeaRunFramework_BaseModel.Store.Base_SysLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Base_SysLog">
+        <PropertyRef Name="SysLogId" />
+      </Principal>
+      <Dependent Role="Base_SysLogDetail">
+        <PropertyRef Name="SysLogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--生成过程中发现错误:
+      警告 6013: 表/视图“LeaRunFramework_Base.dbo.Base_CodeRuleSerious”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="Base_CodeRuleSerious">
+        <Property Name="CodeRuleId" Type="varchar" MaxLength="50" />
+        <Property Name="UserId" Type="varchar" MaxLength="50" />
+        <Property Name="ValueType" Type="int" />
+        <Property Name="NowValue" Type="int" />
+        <Property Name="Enabled" Type="int" />
+        <Property Name="SortCode" Type="int" />
+        <Property Name="DeleteMark" Type="int" />
+        <Property Name="CreateDate" Type="datetime" />
+        <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+        <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        <Property Name="ModifyDate" Type="datetime" />
+        <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+        <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+      </EntityType>-->
+</Schema>

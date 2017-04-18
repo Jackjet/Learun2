@@ -1,0 +1,13 @@
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.ServiceFactory\bin\Debug\LeaRun.ServiceFactory.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.ServiceFactory\bin\Debug\LeaRun.ServiceFactory.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\bin\Debug\LeaRun.ServiceFactory.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\bin\Debug\LeaRun.ServiceFactory.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\bin\Debug\LeaRun.ServiceFactory.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\bin\Debug\LeaRun.ServiceFactory.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.ServiceFactory\obj\Debug\LeaRun.ServiceFactory.pdb

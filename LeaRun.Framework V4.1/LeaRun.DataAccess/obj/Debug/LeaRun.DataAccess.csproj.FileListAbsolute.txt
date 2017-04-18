@@ -1,0 +1,48 @@
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\EntityFramework.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\log4net.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\MySql.Data.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\Oracle.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\System.Data.SQLite.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\EntityFramework.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\log4net.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\MySql.Data.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\Oracle.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\System.Data.SQLite.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.pdb
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.csprojResolveAssemblyReference.cache
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.dll
+D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\销售中产品\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\EntityFramework.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\log4net.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\MySql.Data.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\Oracle.DataAccess.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\System.Data.SQLite.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.pdb
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.csprojResolveAssemblyReference.cache
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.dll
+E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.pdb
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.DataAccess.pdb
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\EntityFramework.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\log4net.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\MySql.Data.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\Oracle.DataAccess.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\System.Data.SQLite.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\bin\Debug\LeaRun.Cache.pdb
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.csprojResolveAssemblyReference.cache
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.dll
+D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.DataAccess\obj\Debug\LeaRun.DataAccess.pdb

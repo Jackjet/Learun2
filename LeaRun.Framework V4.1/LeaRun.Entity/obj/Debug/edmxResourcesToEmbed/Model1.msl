@@ -1,0 +1,839 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LeaRunFramework_BaseModelStoreContainer" CdmEntityContainer="LeaRunFramework_BaseEntities">
+    <EntitySetMapping Name="Base_BackupJob">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_BackupJob">
+        <MappingFragment StoreEntitySet="Base_BackupJob">
+          <ScalarProperty Name="BackupId" ColumnName="BackupId" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="DbName" ColumnName="DbName" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Button">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Button">
+        <MappingFragment StoreEntitySet="Base_Button">
+          <ScalarProperty Name="ButtonId" ColumnName="ButtonId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="JsEvent" ColumnName="JsEvent" />
+          <ScalarProperty Name="ActionEvent" ColumnName="ActionEvent" />
+          <ScalarProperty Name="Split" ColumnName="Split" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ButtonPermission">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ButtonPermission">
+        <MappingFragment StoreEntitySet="Base_ButtonPermission">
+          <ScalarProperty Name="ButtonPermissionId" ColumnName="ButtonPermissionId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ModuleButtonId" ColumnName="ModuleButtonId" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_CodeRule">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_CodeRule">
+        <MappingFragment StoreEntitySet="Base_CodeRule">
+          <ScalarProperty Name="CodeRuleId" ColumnName="CodeRuleId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_CodeRuleDetail">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_CodeRuleDetail">
+        <MappingFragment StoreEntitySet="Base_CodeRuleDetail">
+          <ScalarProperty Name="CodeRuleDetailId" ColumnName="CodeRuleDetailId" />
+          <ScalarProperty Name="CodeRuleId" ColumnName="CodeRuleId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Consted" ColumnName="Consted" />
+          <ScalarProperty Name="AutoReset" ColumnName="AutoReset" />
+          <ScalarProperty Name="FixLength" ColumnName="FixLength" />
+          <ScalarProperty Name="FormatStr" ColumnName="FormatStr" />
+          <ScalarProperty Name="StepValue" ColumnName="StepValue" />
+          <ScalarProperty Name="InitValue" ColumnName="InitValue" />
+          <ScalarProperty Name="FLength" ColumnName="FLength" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="FType" ColumnName="FType" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Company">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Company">
+        <MappingFragment StoreEntitySet="Base_Company">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AccountInfo" ColumnName="AccountInfo" />
+          <ScalarProperty Name="Postalcode" ColumnName="Postalcode" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_DataDictionary">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_DataDictionary">
+        <MappingFragment StoreEntitySet="Base_DataDictionary">
+          <ScalarProperty Name="DataDictionaryId" ColumnName="DataDictionaryId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="IsTree" ColumnName="IsTree" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_DataDictionaryDetail">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_DataDictionaryDetail">
+        <MappingFragment StoreEntitySet="Base_DataDictionaryDetail">
+          <ScalarProperty Name="DataDictionaryDetailId" ColumnName="DataDictionaryDetailId" />
+          <ScalarProperty Name="DataDictionaryId" ColumnName="DataDictionaryId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_DataScopePermission">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_DataScopePermission">
+        <MappingFragment StoreEntitySet="Base_DataScopePermission">
+          <ScalarProperty Name="DataScopePermissionId" ColumnName="DataScopePermissionId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="ConditionJson" ColumnName="ConditionJson" />
+          <ScalarProperty Name="ScopeType" ColumnName="ScopeType" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Department">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Department">
+        <MappingFragment StoreEntitySet="Base_Department">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Email">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Email">
+        <MappingFragment StoreEntitySet="Base_Email">
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Theme" ColumnName="Theme" />
+          <ScalarProperty Name="ThemeColour" ColumnName="ThemeColour" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Addresser" ColumnName="Addresser" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="IsAccessory" ColumnName="IsAccessory" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Receipt" ColumnName="Receipt" />
+          <ScalarProperty Name="IsDelayed" ColumnName="IsDelayed" />
+          <ScalarProperty Name="DelayedTime" ColumnName="DelayedTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_EmailAccessory">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_EmailAccessory">
+        <MappingFragment StoreEntitySet="Base_EmailAccessory">
+          <ScalarProperty Name="EmailAccessoryId" ColumnName="EmailAccessoryId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_EmailAddressee">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_EmailAddressee">
+        <MappingFragment StoreEntitySet="Base_EmailAddressee">
+          <ScalarProperty Name="EmailAddresseeId" ColumnName="EmailAddresseeId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AddresseeId" ColumnName="AddresseeId" />
+          <ScalarProperty Name="AddresseeName" ColumnName="AddresseeName" />
+          <ScalarProperty Name="AddresseeIdState" ColumnName="AddresseeIdState" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="ReadCount" ColumnName="ReadCount" />
+          <ScalarProperty Name="ReadDate" ColumnName="ReadDate" />
+          <ScalarProperty Name="EndReadDate" ColumnName="EndReadDate" />
+          <ScalarProperty Name="Highlight" ColumnName="Highlight" />
+          <ScalarProperty Name="Backlog" ColumnName="Backlog" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_EmailCategory">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_EmailCategory">
+        <MappingFragment StoreEntitySet="Base_EmailCategory">
+          <ScalarProperty Name="EmailCategoryId" ColumnName="EmailCategoryId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Employee">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Employee">
+        <MappingFragment StoreEntitySet="Base_Employee">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Photograph" ColumnName="Photograph" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="OfficeCornet" ColumnName="OfficeCornet" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="OfficeZipCode" ColumnName="OfficeZipCode" />
+          <ScalarProperty Name="OfficeAddress" ColumnName="OfficeAddress" />
+          <ScalarProperty Name="OfficeFax" ColumnName="OfficeFax" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="School" ColumnName="School" />
+          <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="WorkingDate" ColumnName="WorkingDate" />
+          <ScalarProperty Name="HomeZipCode" ColumnName="HomeZipCode" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="HomeFax" ColumnName="HomeFax" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+          <ScalarProperty Name="Party" ColumnName="Party" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="WorkingProperty" ColumnName="WorkingProperty" />
+          <ScalarProperty Name="Competency" ColumnName="Competency" />
+          <ScalarProperty Name="EmergencyContact" ColumnName="EmergencyContact" />
+          <ScalarProperty Name="IsDimission" ColumnName="IsDimission" />
+          <ScalarProperty Name="DimissionDate" ColumnName="DimissionDate" />
+          <ScalarProperty Name="DimissionCause" ColumnName="DimissionCause" />
+          <ScalarProperty Name="DimissionWhither" ColumnName="DimissionWhither" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ExcelImport">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ExcelImport">
+        <MappingFragment StoreEntitySet="Base_ExcelImport">
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ImportName" ColumnName="ImportName" />
+          <ScalarProperty Name="ImportTable" ColumnName="ImportTable" />
+          <ScalarProperty Name="ImportTableName" ColumnName="ImportTableName" />
+          <ScalarProperty Name="ImportFileName" ColumnName="ImportFileName" />
+          <ScalarProperty Name="ErrorHanding" ColumnName="ErrorHanding" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ExcelImportDetail">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ExcelImportDetail">
+        <MappingFragment StoreEntitySet="Base_ExcelImportDetail">
+          <ScalarProperty Name="ImportDetailId" ColumnName="ImportDetailId" />
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="ForeignTable" ColumnName="ForeignTable" />
+          <ScalarProperty Name="BackField" ColumnName="BackField" />
+          <ScalarProperty Name="CompareField" ColumnName="CompareField" />
+          <ScalarProperty Name="AttachCondition" ColumnName="AttachCondition" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+          <ScalarProperty Name="FieldRemark" ColumnName="FieldRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Form">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Form">
+        <MappingFragment StoreEntitySet="Base_Form">
+          <ScalarProperty Name="FormId" ColumnName="FormId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ShowColumn" ColumnName="ShowColumn" />
+          <ScalarProperty Name="FormStyle" ColumnName="FormStyle" />
+          <ScalarProperty Name="ShowWidth" ColumnName="ShowWidth" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="FormType" ColumnName="FormType" />
+          <ScalarProperty Name="VersionNumber" ColumnName="VersionNumber" />
+          <ScalarProperty Name="FormHtml" ColumnName="FormHtml" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_FormKeyValue">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_FormKeyValue">
+        <MappingFragment StoreEntitySet="Base_FormKeyValue">
+          <ScalarProperty Name="FormKeyValueId" ColumnName="FormKeyValueId" />
+          <ScalarProperty Name="FormId" ColumnName="FormId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="ObjectParameter" ColumnName="ObjectParameter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_GroupUser">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_GroupUser">
+        <MappingFragment StoreEntitySet="Base_GroupUser">
+          <ScalarProperty Name="GroupUserId" ColumnName="GroupUserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Language">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Language">
+        <MappingFragment StoreEntitySet="Base_Language">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="BusinessCode" ColumnName="BusinessCode" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="FullValue" ColumnName="FullValue" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="LanguageType" ColumnName="LanguageType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Module">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Module">
+        <MappingFragment StoreEntitySet="Base_Module">
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Isexpand" ColumnName="Isexpand" />
+          <ScalarProperty Name="AllowButton" ColumnName="AllowButton" />
+          <ScalarProperty Name="AllowView" ColumnName="AllowView" />
+          <ScalarProperty Name="AllowForm" ColumnName="AllowForm" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="DataScope" ColumnName="DataScope" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ModulePermission">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ModulePermission">
+        <MappingFragment StoreEntitySet="Base_ModulePermission">
+          <ScalarProperty Name="ModulePermissionId" ColumnName="ModulePermissionId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_NetworkFile">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_NetworkFile">
+        <MappingFragment StoreEntitySet="Base_NetworkFile">
+          <ScalarProperty Name="NetworkFileId" ColumnName="NetworkFileId" />
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileExtensions" ColumnName="FileExtensions" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Sharing" ColumnName="Sharing" />
+          <ScalarProperty Name="SharingFolderId" ColumnName="SharingFolderId" />
+          <ScalarProperty Name="SharingCreateDate" ColumnName="SharingCreateDate" />
+          <ScalarProperty Name="SharingEndDate" ColumnName="SharingEndDate" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_NetworkFolder">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_NetworkFolder">
+        <MappingFragment StoreEntitySet="Base_NetworkFolder">
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="Sharing" ColumnName="Sharing" />
+          <ScalarProperty Name="SharingFolderId" ColumnName="SharingFolderId" />
+          <ScalarProperty Name="SharingCreateDate" ColumnName="SharingCreateDate" />
+          <ScalarProperty Name="SharingEndDate" ColumnName="SharingEndDate" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ObjectUserRelation">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ObjectUserRelation">
+        <MappingFragment StoreEntitySet="Base_ObjectUserRelation">
+          <ScalarProperty Name="ObjectUserRelationId" ColumnName="ObjectUserRelationId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_PhoneNote">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_PhoneNote">
+        <MappingFragment StoreEntitySet="Base_PhoneNote">
+          <ScalarProperty Name="PhoneNoteId" ColumnName="PhoneNoteId" />
+          <ScalarProperty Name="PhonenNumber" ColumnName="PhonenNumber" />
+          <ScalarProperty Name="SendContent" ColumnName="SendContent" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="SendStatus" ColumnName="SendStatus" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Post">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Post">
+        <MappingFragment StoreEntitySet="Base_Post">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ProvinceCity">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ProvinceCity">
+        <MappingFragment StoreEntitySet="Base_ProvinceCity">
+          <ScalarProperty Name="ProvinceCityId" ColumnName="ProvinceCityId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_QueryRecord">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_QueryRecord">
+        <MappingFragment StoreEntitySet="Base_QueryRecord">
+          <ScalarProperty Name="QueryRecordId" ColumnName="QueryRecordId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ConditionJson" ColumnName="ConditionJson" />
+          <ScalarProperty Name="ResourceShare" ColumnName="ResourceShare" />
+          <ScalarProperty Name="NextDefault" ColumnName="NextDefault" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Roles">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Roles">
+        <MappingFragment StoreEntitySet="Base_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_Shortcuts">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_Shortcuts">
+        <MappingFragment StoreEntitySet="Base_Shortcuts">
+          <ScalarProperty Name="ShortcutsId" ColumnName="ShortcutsId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_SysLog">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_SysLog">
+        <MappingFragment StoreEntitySet="Base_SysLog">
+          <ScalarProperty Name="SysLogId" ColumnName="SysLogId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="LogType" ColumnName="LogType" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="IPAddressName" ColumnName="IPAddressName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_SysLogDetail">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_SysLogDetail">
+        <MappingFragment StoreEntitySet="Base_SysLogDetail">
+          <ScalarProperty Name="SysLogDetailId" ColumnName="SysLogDetailId" />
+          <ScalarProperty Name="SysLogId" ColumnName="SysLogId" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyField" ColumnName="PropertyField" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_User">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_User">
+        <MappingFragment StoreEntitySet="Base_User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="InnerUser" ColumnName="InnerUser" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Secretkey" ColumnName="Secretkey" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+          <ScalarProperty Name="Spell" ColumnName="Spell" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="OICQ" ColumnName="OICQ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ChangePasswordDate" ColumnName="ChangePasswordDate" />
+          <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+          <ScalarProperty Name="LogOnCount" ColumnName="LogOnCount" />
+          <ScalarProperty Name="FirstVisit" ColumnName="FirstVisit" />
+          <ScalarProperty Name="PreviousVisit" ColumnName="PreviousVisit" />
+          <ScalarProperty Name="LastVisit" ColumnName="LastVisit" />
+          <ScalarProperty Name="AuditStatus" ColumnName="AuditStatus" />
+          <ScalarProperty Name="AuditUserId" ColumnName="AuditUserId" />
+          <ScalarProperty Name="AuditUserName" ColumnName="AuditUserName" />
+          <ScalarProperty Name="AuditDateTime" ColumnName="AuditDateTime" />
+          <ScalarProperty Name="Online" ColumnName="Online" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+          <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_View">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_View">
+        <MappingFragment StoreEntitySet="Base_View">
+          <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ColumnWidth" ColumnName="ColumnWidth" />
+          <ScalarProperty Name="TextAlign" ColumnName="TextAlign" />
+          <ScalarProperty Name="AllowShow" ColumnName="AllowShow" />
+          <ScalarProperty Name="AllowDerive" ColumnName="AllowDerive" />
+          <ScalarProperty Name="CustomSwitch" ColumnName="CustomSwitch" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ViewPermission">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ViewPermission">
+        <MappingFragment StoreEntitySet="Base_ViewPermission">
+          <ScalarProperty Name="ViewPermissionId" ColumnName="ViewPermissionId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ViewWhere">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ViewWhere">
+        <MappingFragment StoreEntitySet="Base_ViewWhere">
+          <ScalarProperty Name="ViewWhereId" ColumnName="ViewWhereId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ControlType" ColumnName="ControlType" />
+          <ScalarProperty Name="ControlDefault" ColumnName="ControlDefault" />
+          <ScalarProperty Name="ControlSource" ColumnName="ControlSource" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="AllowShow" ColumnName="AllowShow" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ControlCustom" ColumnName="ControlCustom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Base_ViewWherePermission">
+      <EntityTypeMapping TypeName="LeaRunFramework_BaseModel.Base_ViewWherePermission">
+        <MappingFragment StoreEntitySet="Base_ViewWherePermission">
+          <ScalarProperty Name="ViewWherePermissionId" ColumnName="ViewWherePermissionId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+          <ScalarProperty Name="ViewWhereDetailId" ColumnName="ViewWhereDetailId" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
