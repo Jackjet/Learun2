@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <title>技术交流QQ:88888888登录页面</title>
+    <title>上海福耀信息化项目</title>
     <link href="~/Content/Styles/learunui-framework.css" rel="stylesheet" />
     <script src="~/Content/Scripts/jquery/jquery-1.8.2.min.js"></script>
     <script src="~/Content/Scripts/learunui-framework.js"></script>
@@ -74,6 +74,7 @@
     //登录加载
     function Load() {
         var Index = $.cookie('UItheme');
+        //alert(Index);
         if (Index) {
             window.location.href = '@Url.Content("~/Home/")' + Index;
         } else {
@@ -139,8 +140,8 @@
                     <div class="weixing-show">
                         <div class="weixing-txt">
                             微信扫一扫<br />
-                            关注飞鸿公司<br />
                             获取更多消息
+                            
                         </div>
                         <img class="weixing-ma" src="~/Content/Images/weixing-ma.png">
                         <div class="weixing-sanjiao"></div>

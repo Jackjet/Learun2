@@ -66,13 +66,13 @@ function readyIndex() {
 }
 /**安全退出**/
 function IndexOut() {
-    var msg = "<div class='ui_alert'>确认要退出 LeaRun.信息化快速开发框架？</div>"
+    var msg = "<div class='ui_alert'>确认要退出 SOFT-R.信息化快速开发框架？</div>"
     top.$.dialog({
         id: "confirmDialog",
         lock: true,
         icon: "hits.png",
         content: msg,
-        title: "力软提示",
+        title: "飞鸿提示",
         button: [
         {
             name: '退出',
@@ -142,7 +142,7 @@ function Support() {
 }
 //关于我们
 function About() {
-    alertDialog("力软信息化系统快速开发框架LR-FDMS<br>版本4.1<br>上海力软信息技术有限公司<br>保留所有权利", 0);
+    alertDialog("飞鸿信息化系统快速开发框架CHINA-SOFT<br>版本4.1<br>北京软件信息技术有限公司<br>保留所有权利", 0);
 }
 //个性化皮肤设置
 function SkinIndex() {

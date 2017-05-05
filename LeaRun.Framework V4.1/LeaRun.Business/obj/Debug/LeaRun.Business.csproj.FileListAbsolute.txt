@@ -86,3 +86,25 @@ D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_�
 D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.Business\obj\Debug\LeaRun.Business.csprojResolveAssemblyReference.cache
 D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.Business\obj\Debug\LeaRun.Business.dll
 D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.Business\obj\Debug\LeaRun.Business.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Business.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Business.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Cache.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.DataAccess.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Entity.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Repository.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Utilities.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\log4net.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\Oracle.DataAccess.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\MySql.Data.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\System.Data.SQLite.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\EntityFramework.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\SharpZipLib.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Cache.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.DataAccess.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Entity.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Repository.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\bin\Debug\LeaRun.Utilities.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\obj\Debug\LeaRun.Business.csprojResolveAssemblyReference.cache
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\obj\Debug\LeaRun.Business.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Business\obj\Debug\LeaRun.Business.pdb

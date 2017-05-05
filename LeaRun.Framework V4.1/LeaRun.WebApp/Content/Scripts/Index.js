@@ -66,7 +66,7 @@ function readyIndex() {
 }
 /**安全退出**/
 function IndexOut() {
-    var msg = "<div class='ui_alert'>确认要退出 SOFT-R.信息化快速开发框架？</div>"
+    var msg = "<div class='ui_alert'>确认要退出系统吗？</div>"
     top.$.dialog({
         id: "confirmDialog",
         lock: true,
@@ -142,7 +142,7 @@ function Support() {
 }
 //关于我们
 function About() {
-    alertDialog("飞鸿信息化系统快速开发框架CHINA-SOFT<br>版本4.1<br>北京软件信息技术有限公司<br>保留所有权利", 0);
+    alertDialog("上海福耀信息化系统<br>版本4.1<br>上海福耀信息部<br>保留所有权利", 0);
 }
 //个性化皮肤设置
 function SkinIndex() {

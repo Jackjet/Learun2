@@ -257,7 +257,7 @@
     function btn_CompleteDelete() {
         var EmailId = CheckboxValue();
         if (IsDelData(EmailId)) {
-            confirmDialog("力软提示", "彻底删除后邮件将无法恢复，您确定要删除吗？", function (r) {
+            confirmDialog("飞鸿提示", "彻底删除后邮件将无法恢复，您确定要删除吗？", function (r) {
                 if (r) {
                     Loading(true, "正在彻底删除邮件...");
                     window.setTimeout(function () {

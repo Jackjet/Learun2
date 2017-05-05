@@ -1,0 +1,6 @@
+2017-04-18 10:33:01,453 [11] ERROR LeaRun.DataAccess.DbHelper - 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+2017-04-18 10:33:01,453 [8] ERROR LeaRun.DataAccess.DbHelper - 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+2017-04-18 10:33:01,453 [10] ERROR LeaRun.DataAccess.DbHelper - 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+2017-04-18 10:34:08,857 [8] ERROR LeaRun.DataAccess.DbHelper - 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+2017-04-18 10:34:08,857 [7] ERROR LeaRun.DataAccess.DbHelper - 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+2017-04-18 11:37:43,892 [12] ERROR LeaRun.DataAccess.DbHelper - 参数化查询 '(@CompanyId nvarchar(4000))SELECT top 1 CompanyId,ParentId,Categ' 需要参数 '@CompanyId'，但未提供该参数。

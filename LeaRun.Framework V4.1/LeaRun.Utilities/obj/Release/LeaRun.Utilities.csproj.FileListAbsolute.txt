@@ -11,3 +11,16 @@ D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息
 D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Utilities\obj\Release\LeaRun.Utilities.csprojResolveAssemblyReference.cache
 D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Utilities\obj\Release\LeaRun.Utilities.dll
 D:\工作项目\LeaRun.快速信息化系统开发框架V4.1\LeaRun.快速信息化系统开发框架V4.1\project\LeaRun.Framework V4.1\LeaRun.Utilities\obj\Release\LeaRun.Utilities.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\LeaRun.Utilities.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\LeaRun.Utilities.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\LeaRun.DataAccess.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\log4net.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\Newtonsoft.Json.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\SharpZipLib.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\Oracle.DataAccess.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\MySql.Data.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\System.Data.SQLite.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\bin\Release\LeaRun.DataAccess.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\obj\Release\LeaRun.Utilities.csprojResolveAssemblyReference.cache
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\obj\Release\LeaRun.Utilities.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Utilities\obj\Release\LeaRun.Utilities.pdb

@@ -61,8 +61,10 @@
     <Compile Include="Base.Common\StringHelper.cs" />
     <Compile Include="Base.Common\SysHelper.cs" />
     <Compile Include="Base.Config\ConfigHelper.cs" />
+    <Compile Include="Base.Data\BuildJSON.cs" />
     <Compile Include="Base.Data\DataHelper.cs" />
     <Compile Include="Base.Data\HashtableHelper.cs" />
+    <Compile Include="Base.Data\PagerResponse.cs" />
     <Compile Include="Base.DateTime\DateTimeHelper.cs" />
     <Compile Include="Base.Document\Excel\DeriveExcel.cs" />
     <Compile Include="Base.Document\Excel\ImportExcel.cs" />

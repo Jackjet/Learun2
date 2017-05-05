@@ -1,6 +1,6 @@
 ﻿/**
  * jQuery LeaRunUI 4.1
- *上海力软信息技术有限公司 Copyright © Learun 2014
+ *北京软件信息技术有限公司 Copyright © Learun 2014
  */
 //样式
 $(function () {
@@ -669,7 +669,7 @@ function alertDialog(msg, type) {
         id: "alertDialog",
         icon: icon,
         content: msg,
-        title: "力软提示",
+        title: "飞鸿提示",
         ok: function () {
             return true;
         }
@@ -1060,7 +1060,7 @@ function comboBoxTree(Objkey, height) {
 /*parm：      条件参数
 --------------------------------------------------*/
 function delConfirm(url, parm, msg) {
-    confirmDialog("力软提示", msg, function (r) {
+    confirmDialog("飞鸿提示", msg, function (r) {
         if (r) {
             Loading(true, "正在删除数据...");
             window.setTimeout(function () {
@@ -1078,7 +1078,7 @@ function delConfig(url, parm, count) {
     if (count == undefined) {
         count = 1;
     }
-    confirmDialog("力软提示", "注：您确定要删除 " + count + " 笔记录？", function (r) {
+    confirmDialog("飞鸿提示", "注：您确定要删除 " + count + " 笔记录？", function (r) {
         if (r) {
             Loading(true, "正在删除数据...");
             window.setTimeout(function () {
@@ -1102,7 +1102,7 @@ function GetDeriveExcel(obj, fileName) {
     if (data == "") {
         data = $(obj).pqGrid("option", "dataModel").data;//获取表格数据
     }
-    confirmDialog("力软提示", "注：您确定要导出 " + data.length + " 笔记录？", function (r) {
+    confirmDialog("飞鸿提示", "注：您确定要导出 " + data.length + " 笔记录？", function (r) {
         if (r) {
             var postData = {
                 JsonColumn: JSON.stringify(column),

@@ -17,3 +17,8 @@ D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_�
 D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.Cache\obj\Debug\LeaRun.Cache.csprojResolveAssemblyReference.cache
 D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.Cache\obj\Debug\LeaRun.Cache.dll
 D:\Work\Projects\福耀项目\C#Net MVC4系统开发框架说明\1CX_DX_01_001_快速信息化系统开发框架\C#Net MVC4系统开发框架\code\LeaRun.Framework V4.1\LeaRun.Cache\obj\Debug\LeaRun.Cache.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Cache\bin\Debug\LeaRun.Cache.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Cache\bin\Debug\LeaRun.Cache.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Cache\obj\Debug\LeaRun.Cache.csprojResolveAssemblyReference.cache
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Cache\obj\Debug\LeaRun.Cache.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.Cache\obj\Debug\LeaRun.Cache.pdb

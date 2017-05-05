@@ -42,7 +42,9 @@ function Tabchange(id) {
 接收地址栏参数
 **********/
 function GetQuery(key) {
+    //alert(location.search);
     var search = location.search.slice(1); //得到get方式提交的查询字符串
+    //alert(search);
     var arr = search.split("&");
     for (var i = 0; i < arr.length; i++) {
         var ar = arr[i].split("=");

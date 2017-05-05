@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="BaseUtility\BaseEntity.cs" />
     <Compile Include="BaseUtility\DataContext.cs" />
+    <Compile Include="CommonModule\Base_Flow.cs" />
+    <Compile Include="CommonModule\Base_FlowStep.cs" />
     <Compile Include="CommonModule\Base_FormAttribute.cs" />
     <Compile Include="CommonModule\Base_FormAttributeValue.cs" />
     <Compile Include="CommonModule\Base_InterfaceManage.cs" />
@@ -63,6 +65,8 @@
     <Compile Include="CommonModule\Base_CodeRule.cs" />
     <Compile Include="CommonModule\Base_CodeRuleDetail.cs" />
     <Compile Include="CommonModule\Base_CodeRuleSerious.cs" />
+    <Compile Include="CommonModule\FY_Rapid.cs" />
+    <Compile Include="CommonModule\TestTable.cs" />
     <Compile Include="ExampleModule\Base_Email.cs" />
     <Compile Include="ExampleModule\Base_EmailAccessory.cs" />
     <Compile Include="ExampleModule\Base_EmailAddressee.cs" />
