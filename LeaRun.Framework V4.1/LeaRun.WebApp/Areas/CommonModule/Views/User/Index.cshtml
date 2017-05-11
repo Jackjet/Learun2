@@ -111,7 +111,9 @@
         QueryDialog("/Utility/QueryPage", "QueryPage", "查询过滤", 770, 395, function (iframe) {
             top.frames[iframe].QueryClick(function (JsonData) {
                 QueryParamJson = JsonData;
+                alert(escape(JsonData));
                 $("#gridTable").jqGrid('setGridParam', {
+                    
                     url: "@Url.Content("~/CommonModule/User/GridPageListJson")?ParameterJson=" + escape(JsonData), page: 1
                 }).trigger('reloadGrid');
             });

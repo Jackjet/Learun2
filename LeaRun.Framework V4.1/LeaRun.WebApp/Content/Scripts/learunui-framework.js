@@ -272,6 +272,11 @@ function SetWebControls(data) {
     for (var key in data) {
         var id = $('#' + key);
         var value = $.trim(data[key]).replace("&nbsp;", "");
+        //测试为什么日期格式会加时间分钟
+        //if (key == "res_cdate")
+        //{
+        //    alert(value);
+        //}
         var type = id.attr('type');
         switch (type) {
             case "checkbox":
@@ -1062,7 +1067,7 @@ function comboBoxTree(Objkey, height) {
 /*parm：      条件参数
 --------------------------------------------------*/
 function delConfirm(url, parm, msg) {
-    confirmDialog("飞鸿提示", msg, function (r) {
+    confirmDialog("提示", msg, function (r) {
         if (r) {
             Loading(true, "正在删除数据...");
             window.setTimeout(function () {
@@ -1080,7 +1085,7 @@ function delConfig(url, parm, count) {
     if (count == undefined) {
         count = 1;
     }
-    confirmDialog("飞鸿提示", "注：您确定要删除 " + count + " 笔记录？", function (r) {
+    confirmDialog("提示", "注：您确定要删除 " + count + " 笔记录？", function (r) {
         if (r) {
             Loading(true, "正在删除数据...");
             window.setTimeout(function () {
@@ -1104,7 +1109,7 @@ function GetDeriveExcel(obj, fileName) {
     if (data == "") {
         data = $(obj).pqGrid("option", "dataModel").data;//获取表格数据
     }
-    confirmDialog("飞鸿提示", "注：您确定要导出 " + data.length + " 笔记录？", function (r) {
+    confirmDialog("提示", "注：您确定要导出 " + data.length + " 笔记录？", function (r) {
         if (r) {
             var postData = {
                 JsonColumn: JSON.stringify(column),

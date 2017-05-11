@@ -4678,7 +4678,16 @@
                         if (skip === 0) {
                             if (o.useColSpanStyle) {
                                 // expand the header height to two rows
-                                $th.attr("rowspan", "2");
+                                //$th.attr("rowspan", "2");
+                                //以下为我修改，增加多表头合并的功能
+                                var rowspanlen = $th.parent().siblings("tr").length;
+                                if (rowspanlen == 0) {
+                                    rowspanlen = 2;
+                                }
+                                else {
+                                    rowspanlen = rowspanlen + 1;
+                                }
+                                $th.attr("rowspan", rowspanlen);
                             } else {
                                 $('<th>', { role: "columnheader" })
                                     .addClass("ui-state-default ui-th-column-header ui-th-" + ts.p.direction)
