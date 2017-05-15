@@ -117,7 +117,7 @@
  }
 
 .WdateDiv .MTitle{
-	background-color:#4A5B79;
+	background-color:#1e71b1;
     color:#FFFFFF;
 }
 .WdateDiv .WdayTable2{
@@ -142,7 +142,7 @@
 
 .WdateDiv .WdayOn{
 	cursor:pointer;
-	background-color:#4A5B79;
+	background-color:#1e71b1;
     color:#FFFFFF
 }
 
@@ -153,7 +153,7 @@
 
 .WdateDiv .WwdayOn{
 	cursor:pointer;
-	background-color:#4A5B79;
+	background-color:#1e71b1;
     color:#FFFFFF
 }
 .WdateDiv .Wtoday{
@@ -161,11 +161,11 @@
 	color:blue;
 }
 .WdateDiv .Wselday{
-	background-color:#4A5B79;
+	background-color:#1e71b1;
     color:#FFFFFF;
 }
 .WdateDiv .WspecialDay{
-	background-color:#4A5B79;
+	background-color:#1e71b1;
     color:#FFFFFF
 }
 
@@ -176,7 +176,7 @@
 
 .WdateDiv .WotherDayOn{ 
 	cursor:pointer;
-	background-color:#4A5B79;
+	background-color:#1e71b1;
     color:#FFFFFF
 }
 

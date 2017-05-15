@@ -55,7 +55,7 @@ input[type="checkbox"]{vertical-align:middle;border:1px solid #F7F7F7; margin-bo
 .tools_bar .dropdown .dropdown-data span{left: 50%; /* 三角形居中显示 */ margin-left: -10px; /* 三角形居中显示 */ top: -18px; width: 0px; height: 0px; font-size: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: rgb(255,255,255); border-left-color: transparent; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-top-style: dashed; border-right-style: dashed; border-bottom-style: solid; border-left-style: dashed; position: absolute;}
 .tools_bar .dropdown .dropdown-data ul{float:left;border:1px solid #ccc;background:url(../images/line.png) 26px 0 repeat-y #fff;padding:2px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; box-shadow:0 0 8px #ccc;}
 .tools_bar .dropdown .dropdown-data ul li{height:24px; line-height:24px;cursor:pointer;padding:0 30px;}
-.tools_bar .dropdown .dropdown-data ul li:hover{background-color:#4A5B79; color:#fff;height:24px; line-height:24px; padding:0 30px;}
+.tools_bar .dropdown .dropdown-data ul li:hover{background-color:#1e71b1; color:#fff;height:24px; line-height:24px; padding:0 30px;}
 .tools_bar .dropdown .dropdown-data li img{position:absolute;left:7px;margin-top:4px; margin-bottom:4px;width:16px;height:16px; vertical-align:middle;border:0px solid #fff;}
 .tools_bar .disabled{cursor:not-allowed;float:left;display:block;margin:2px 2px 0;padding:0 0 0 10px;height:39px;overflow:hidden;border:1px solid #F7F7F7;border-radius:3px 3px 3px 3px;color:#666;background:#F7F7F7;}
 .tools_bar .disabled span{display:block;padding:0 10px 0 0;background:none;}
@@ -77,10 +77,10 @@ input[type="checkbox"]{vertical-align:middle;border:1px solid #F7F7F7; margin-bo
 .nui-toolbar-item i{position:absolute; width:7px; height:6px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAGAgMAAAByYGzlAAAAA3NCSVQICAjb4U/gAAAACVBMVEX///////9/f3+5ROUVAAAAA3RSTlMA//9EUNYhAAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABd0RVh0Q3JlYXRpb24gVGltZQAyMDEzLjguMzF+eHXPAAAAGklEQVQImWNo4GBYoMGQsYRBagIDmwMDIwMAJJoDTmfqPxsAAAAASUVORK5CYII=");}
 .nui-dropdownData{position:fixed; z-index:4000; text-align:left; border:1px solid #999; padding-top:5px; padding-bottom:5px; background:#fff; display:none;}
 .nui-dropdownData-item{height:24px; line-height:24px;cursor:pointer;padding:0 15px;}
-.nui-dropdownData-item:hover{background:#4A5B79; color:#fff;}
+.nui-dropdownData-item:hover{background:#1e71b1; color:#fff;}
 /*按钮方案3*/
 .nui-txt-link{padding:4px; text-decoration:none; cursor:pointer; border-radius:3px;}
-.nui-txt-link:hover{color:#fff; background-color:#4A5B79;}
+.nui-txt-link:hover{color:#fff; background-color:#1e71b1;}
 /*按钮工具栏位+按钮end*/
 /*列表/视图 切换begin*/
 .switch-btns{margin:0px;float:right;line-height:32px;}
@@ -98,9 +98,9 @@ input[type="checkbox"]{vertical-align:middle;border:1px solid #F7F7F7; margin-bo
 .sys_spec_text{padding-left:15px;}
 .sys_spec_text li{position:relative;outline:none;display:inline;float:left;height:43px;position:relative;margin:10px 15px 0px 0;outline:none;}
 .sys_spec_text li a{cursor:pointer;vertical-align:middle;text-align:center;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:5px 5px 5px 5px;height:39px;line-height:39px;width:98px;text-align:center;padding:0px 0px;border:1px solid #ccc;background:#fff;display:inline-block;outline:none;}
-.sys_spec_text li a:hover{border:1px solid #4A5B79;padding:0 0px;text-decoration:none;}
+.sys_spec_text li a:hover{border:1px solid #1e71b1;padding:0 0px;text-decoration:none;}
 .sys_spec_text li i{position:absolute;width:10px;height:10px;font-size:0;line-height:0;right:1px;bottom:2px;background:url(../Images/sys_item_selected.gif) no-repeat right bottom;z-index:99;display:none;}
-.sys_spec_text li.selected a{border:1px solid #4A5B79;padding:0 0px;}
+.sys_spec_text li.selected a{border:1px solid #1e71b1;padding:0 0px;}
 .sys_spec_text li.selected i{display:block;}
 .sys_spec_text li img{vertical-align:middle;border:0px solid #fff;padding-right:5px;margin-top:-2px;}
 .sys_spec_text a.disabled{cursor:not-allowed;display:block;overflow:hidden;color:#a9a6a6;}
@@ -115,7 +115,7 @@ input[type="checkbox"]{vertical-align:middle;border:1px solid #F7F7F7; margin-bo
 .grid .txtselect{border:0px solid #fff;height:22px;line-height:22px;display:inline-block;width:100%; font-family:微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif; font-size:9pt;color:#000000;}
 .grid .td-div{background-color:#F7F7F7;color:#222;cursor:pointer;}
 .grid td img{vertical-align:middle;border:0px solid #fff;}
-.grid tbody .selected{background-color:#4A5B79;color:#fff;cursor:pointer;}
+.grid tbody .selected{background-color:#1e71b1;color:#fff;cursor:pointer;}
 .grid tbody .tdhover{background-color:#eee;cursor:pointer;}
 .grid .tdwarning{border-bottom:1px solid #E74D3C;}
 .groupgrid{margin:0px;border-collapse:collapse;table-layout:fixed;}
@@ -123,7 +123,7 @@ input[type="checkbox"]{vertical-align:middle;border:1px solid #F7F7F7; margin-bo
 .groupgrid tbody td{text-align:left;border-bottom:1px solid #ccc;padding:5px 2px;word-break:break-all;}
 .groupgrid tbody td img{vertical-align:middle;border:0px solid #fff;}
 .groupgrid tbody td .grouptitle{float:left;font-weight:bold;}
-.groupgrid tbody .active{background-color:#4A5B79;color:#fff;cursor:pointer;}
+.groupgrid tbody .active{background-color:#1e71b1;color:#fff;cursor:pointer;}
 .groupgrid tbody .tdhover{background-color:#eee;cursor:pointer;}
 /*表格end*/
 /*tab*/
@@ -193,7 +193,7 @@ input.disabled{cursor:not-allowed;display:block;overflow:hidden;color:#666;backg
 .rightMenu ul li{cursor:pointer;clear:both;height:24px;line-height:24px;white-space:nowrap;padding:0 30px;}
 .rightMenu ul .disabled{cursor:not-allowed;color:#ccc;}
 .rightMenu ul li.sub{background-repeat:no-repeat;background-position:right 9px;background-image:url(../images/arrow.png);}
-.rightMenu ul li.active{background-color:#4A5B79; color:#fff;}
+.rightMenu ul li.active{background-color:#1e71b1; color:#fff;}
 .rightMenu ul ul{display:none;position:absolute; color:#000000;}
 .rightMenu .m-split{height:2px;background:url(../Images/splitLine_bg.gif) center repeat-x;margin:0 2px;margin-top:1px;margin-bottom:1px; margin-left:26px;}
 .rightMenu li img{position:absolute;border:0px;left:6px;margin-top:4px;width:16px;height:16px;}
@@ -224,7 +224,7 @@ input.disabled{cursor:not-allowed;display:block;overflow:hidden;color:#666;backg
 .accordion-list dd{height: 35px; line-height: 35px; border-bottom: 1px solid #ccc;}
 .accordion-list dd:hover{background-color:#eee;}
 .accordion-list dd a{cursor:pointer; display: block; position: relative; text-decoration: none; padding-left: 26px;}
-.accordion-list dd .active{background-color:#4A5B79; color: #fff;}
+.accordion-list dd .active{background-color:#1e71b1; color: #fff;}
 .accordion-list dd i{width:16px; height:16px; float:left; margin-top:10px; margin-right:7px;}
 .accordion-list dd a span{position: absolute; right: 10px; top: 8px; min-width: 14px; min-width: 16px; height: 14px; line-height: 14px; font-style: normal; background-color: #f5f5f5; border: 1px solid #bec2c7; border-radius: 15px; font-size: 11px; text-align: center; padding: 1px 6px;}
 .accordion-list dd .active span{position: absolute; right: 10px; top: 8px; min-width: 14px; min-width: 16px; height: 14px; line-height: 14px; font-style: normal; color: #000000; background-color: #fff; border: 1px solid #96A3B4; border-radius: 15px; font-size: 11px; text-align: center; padding: 1px 6px;}

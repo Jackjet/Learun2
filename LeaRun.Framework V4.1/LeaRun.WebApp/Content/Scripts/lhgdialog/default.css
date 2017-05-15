@@ -93,18 +93,18 @@ table.ui_border,table.ui_dialog{ width:auto;border-spacing:0;*border-collapse:co
 .ui_lt,.ui_rt,.ui_lb,.ui_rb{ width:6px;height:6px;display:block; }
 .ui_lt{ border-radius:4px 0 0 0; }.ui_rt{ border-radius:0 4px 0 0; }.ui_rb{ border-radius:0 0 4px 0; }.ui_lb{ border-radius:0 0 0 4px; }
 /*.ui_lt,.ui_rt,.ui_l,.ui_r,.ui_lb,.ui_b,.ui_t,.ui_rb{ background:rgba(102,102,102,.3);background:#666\9;filter:alpha(opacity=30); }*/
-.ui_lt,.ui_rt,.ui_l,.ui_r,.ui_lb,.ui_b,.ui_t,.ui_rb{background:#4A5B79;}
+.ui_lt,.ui_rt,.ui_l,.ui_r,.ui_lb,.ui_b,.ui_t,.ui_rb{background:#1e71b1;}
 /*标题栏样式*/
 .ui_title_bar{ position:relative;height:100%; }
 .ui_title{
     font-weight:bold;color:#fff; height:25px;line-height:20px;padding-left:3px;border-bottom:0px solid #ccc;
-    background:#4A5B79;
+    background:#1e71b1;
 }
 
 .ui_state_focus .ui_title{ font-size:10pt; }
 .ui_state_drag .ui_title { 
    font-weight:bold;color:#fff; height:25px;line-height:20px;padding-left:3px;border-bottom:0px solid #ccc;
-    background:#4A5B79;
+    background:#1e71b1;
 }
 
 /*标题纯CSS按钮定位部分*/

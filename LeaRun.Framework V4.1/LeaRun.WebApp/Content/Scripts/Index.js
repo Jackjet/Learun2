@@ -72,7 +72,7 @@ function IndexOut() {
         lock: true,
         icon: "hits.png",
         content: msg,
-        title: "飞鸿提示",
+        title: "提示",
         button: [
         {
             name: '退出',

@@ -133,8 +133,8 @@
 }
 .swMain ul.anchor li a.selected{
   color:#F8F8F8;
-  background: #4A5B79;  /* EA8511 */
-  border: 1px solid #4A5B79;
+  background: #1e71b1;  /* EA8511 */
+  border: 1px solid #1e71b1;
   cursor:text;
   -moz-box-shadow: 5px 5px 8px #888;
   -webkit-box-shadow: 5px 5px 8px #888;
@@ -142,7 +142,7 @@
 }
 .swMain ul.anchor li a.selected:hover {
   color:#F8F8F8;  
-  background: #4A5B79;  
+  background: #1e71b1;  
 }
 
 .swMain ul.anchor li a.done { 

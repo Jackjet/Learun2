@@ -31,7 +31,7 @@
         /**初始化**/
         $(document).ready(function () {
             ServerCurrentTime()
-            AddTabMenu('Imain', '@Url.Content("~/Home/TreePage")', '欢迎首页', "house.png", 'false');
+            AddTabMenu('Imain', '@Url.Content("~/CommonModule/Rapid/PictureReport")', '欢迎首页', "house.png", 'false');
             GetAccordionMenu();
             InitializeImpact();
             ShortcutsList();
@@ -179,7 +179,7 @@
     <!-- header -->
     <div class="header">
         <div class="logo fleft" >
-            <img src="~/Content/Images/loginlogo.png" />
+            @*<img src="~/Content/Images/loginlogo.png" />*@   
         </div>
         <div id="Headermenu">
             <ul id="topnav">

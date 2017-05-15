@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -8617,6 +8618,7 @@
     <Content Include="Areas\CommonModule\Views\Rapid\Form.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\RapidMonthlyReport.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\PictureReport.cshtml" />
+    <Content Include="Areas\CommonModule\Views\Rapid\PictureIndex.cshtml" />
     <None Include="Properties\PublishProfiles\LR-FDMS.pubxml" />
     <Content Include="Views\Home\SkinIndex.cshtml" />
     <Content Include="Views\Login\Default.cshtml" />

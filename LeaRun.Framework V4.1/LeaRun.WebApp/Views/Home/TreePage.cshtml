@@ -23,15 +23,16 @@
         $(function () {
             LodaChartData();
             Browser();
-            Speedometer();
+            //Speedometer();
         })
         function LodaChartData() {
+
             $('#container').highcharts({
                 chart: {
                     type: 'spline'
                 },
                 title: {
-                    text: 'top5 销售产品统计表'
+                    text: '完成及时率统计表'
                 },
                 xAxis: {
                     categories: ['1月份', '2月份', '3月份', '4月份', '5月份', '6月份',
@@ -39,11 +40,11 @@
                 },
                 yAxis: {
                     title: {
-                        text: '销售产品'
+                        text: '完成及时率'
                     },
                     labels: {
                         formatter: function () {
-                            return this.value + '°'
+                            return this.value + ''
                         }
                     }
                 },
@@ -61,19 +62,12 @@
                     }
                 },
                 series: [{
-                    name: 'Tokyo',
-                    marker: {
-                        symbol: 'square'
-                    },
-                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
-                        y: 26.5,
-                        marker: {
-                            symbol: 'url(/demo/img/sun.png)'
-                        }
-                    }, 23.3, 18.3, 13.9, 9.6]
+                    name: '销售部',
+                    
+                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,26.5, 23.3, 18.3, 13.9, 9.6]
 
                 }, {
-                    name: 'London',
+                    name: '质保部',
                     marker: {
                         symbol: 'diamond'
                     },
@@ -88,14 +82,14 @@
         };
         function Browser() {
             var colors = Highcharts.getOptions().colors,
-            categories = ['MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera'],
-            name = 'Browser brands',
+            categories = ['质保部', '销售部', '工程部', '信息部', '财务部'],
+            name = '部门名称',
             data = [{
                 y: 55.11,
                 color: colors[0],
                 drilldown: {
-                    name: 'MSIE versions',
-                    categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                    name: '用户',
+                    categories: ['用户1', '用户2', '用户3', '用户4'],
                     data: [10.85, 7.35, 33.06, 2.81],
                     color: colors[0]
                 }
@@ -103,8 +97,8 @@
                 y: 21.63,
                 color: colors[1],
                 drilldown: {
-                    name: 'Firefox versions',
-                    categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5', 'Firefox 3.6', 'Firefox 4.0'],
+                    name: '用户',
+                    categories: ['用户1', '用户2', '用户3', '用户4', '用户5'],
                     data: [0.20, 0.83, 1.58, 13.12, 5.43],
                     color: colors[1]
                 }
@@ -112,28 +106,26 @@
                 y: 11.94,
                 color: colors[2],
                 drilldown: {
-                    name: 'Chrome versions',
-                    categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0',
-                        'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
-                    data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+                    name: '用户',
+                    categories: ['用户1', '用户2', '用户3', '用户4', '用户5'],
+                    data: [0.12, 0.19, 0.12, 0.36, 0.32],
                     color: colors[2]
                 }
             }, {
                 y: 7.15,
                 color: colors[3],
                 drilldown: {
-                    name: 'Safari versions',
-                    categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari/Maxthon',
-                        'Safari 3.1', 'Safari 4.1'],
-                    data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+                    name: '用户',
+                    ccategories: ['用户1', '用户2', '用户3', '用户4', '用户5'],
+                    data: [4.55, 1.42, 0.23, 0.21, 0.20],
                     color: colors[3]
                 }
             }, {
                 y: 2.14,
                 color: colors[4],
                 drilldown: {
-                    name: 'Opera versions',
-                    categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
+                    name: '用户',
+                    categories: ['用户1', '用户2', '用户3'],
                     data: [0.12, 0.37, 1.65],
                     color: colors[4]
                 }
@@ -155,14 +147,14 @@
                     type: 'column'
                 },
                 title: {
-                    text: '浏览器的市场份额,2011年4月'
+                    text: '数据统计,2017年'
                 },
                 xAxis: {
                     categories: categories
                 },
                 yAxis: {
                     title: {
-                        text: '总市场份额百分比'
+                        text: '问题百分比'
                     }
                 },
                 plotOptions: {
@@ -195,11 +187,11 @@
                 tooltip: {
                     formatter: function () {
                         var point = this.point,
-                            s = this.x + ':<b>' + this.y + '% market share</b><br/>';
+                            s = this.x + ':<b>' + this.y + '% </b><br/>';
                         if (point.drilldown) {
-                            s += 'Click to view ' + point.category + ' versions';
+                            s += 'Click to view ' + point.category + '员工';
                         } else {
-                            s += 'Click to return to browser brands';
+                            s += 'Click to return';
                         }
                         return s;
                     }
@@ -215,124 +207,124 @@
             })
             .highcharts(); // return chart
         }
-        function Speedometer() {
-            $('#containerB').highcharts({
-                chart: {
-                    type: 'gauge',
-                    plotBackgroundColor: null,
-                    plotBackgroundImage: null,
-                    plotBorderWidth: 0,
-                    plotShadow: false
-                },
+        //function Speedometer() {
+        //    $('#containerB').highcharts({
+        //        chart: {
+        //            type: 'gauge',
+        //            plotBackgroundColor: null,
+        //            plotBackgroundImage: null,
+        //            plotBorderWidth: 0,
+        //            plotShadow: false
+        //        },
 
-                title: {
-                    text: '仪表盘'
-                },
+        //        title: {
+        //            text: '仪表盘'
+        //        },
 
-                pane: {
-                    startAngle: -150,
-                    endAngle: 150,
-                    background: [{
-                        backgroundColor: {
-                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-                            stops: [
-                                [0, '#FFF'],
-                                [1, '#333']
-                            ]
-                        },
-                        borderWidth: 0,
-                        outerRadius: '109%'
-                    }, {
-                        backgroundColor: {
-                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-                            stops: [
-                                [0, '#333'],
-                                [1, '#FFF']
-                            ]
-                        },
-                        borderWidth: 1,
-                        outerRadius: '107%'
-                    }, {
-                        // default background
-                    }, {
-                        backgroundColor: '#DDD',
-                        borderWidth: 0,
-                        outerRadius: '105%',
-                        innerRadius: '103%'
-                    }]
-                },
+        //        pane: {
+        //            startAngle: -150,
+        //            endAngle: 150,
+        //            background: [{
+        //                backgroundColor: {
+        //                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+        //                    stops: [
+        //                        [0, '#FFF'],
+        //                        [1, '#333']
+        //                    ]
+        //                },
+        //                borderWidth: 0,
+        //                outerRadius: '109%'
+        //            }, {
+        //                backgroundColor: {
+        //                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+        //                    stops: [
+        //                        [0, '#333'],
+        //                        [1, '#FFF']
+        //                    ]
+        //                },
+        //                borderWidth: 1,
+        //                outerRadius: '107%'
+        //            }, {
+        //                // default background
+        //            }, {
+        //                backgroundColor: '#DDD',
+        //                borderWidth: 0,
+        //                outerRadius: '105%',
+        //                innerRadius: '103%'
+        //            }]
+        //        },
 
-                // the value axis
-                yAxis: {
-                    min: 0,
-                    max: 200,
+        //        // the value axis
+        //        yAxis: {
+        //            min: 0,
+        //            max: 200,
 
-                    minorTickInterval: 'auto',
-                    minorTickWidth: 1,
-                    minorTickLength: 10,
-                    minorTickPosition: 'inside',
-                    minorTickColor: '#666',
+        //            minorTickInterval: 'auto',
+        //            minorTickWidth: 1,
+        //            minorTickLength: 10,
+        //            minorTickPosition: 'inside',
+        //            minorTickColor: '#666',
 
-                    tickPixelInterval: 30,
-                    tickWidth: 2,
-                    tickPosition: 'inside',
-                    tickLength: 10,
-                    tickColor: '#666',
-                    labels: {
-                        step: 2,
-                        rotation: 'auto'
-                    },
-                    title: {
-                        text: 'km/h'
-                    },
-                    plotBands: [{
-                        from: 0,
-                        to: 120,
-                        color: '#55BF3B' // green
-                    }, {
-                        from: 120,
-                        to: 160,
-                        color: '#DDDF0D' // yellow
-                    }, {
-                        from: 160,
-                        to: 200,
-                        color: '#DF5353' // red
-                    }]
-                },
+        //            tickPixelInterval: 30,
+        //            tickWidth: 2,
+        //            tickPosition: 'inside',
+        //            tickLength: 10,
+        //            tickColor: '#666',
+        //            labels: {
+        //                step: 2,
+        //                rotation: 'auto'
+        //            },
+        //            title: {
+        //                text: 'km/h'
+        //            },
+        //            plotBands: [{
+        //                from: 0,
+        //                to: 120,
+        //                color: '#55BF3B' // green
+        //            }, {
+        //                from: 120,
+        //                to: 160,
+        //                color: '#DDDF0D' // yellow
+        //            }, {
+        //                from: 160,
+        //                to: 200,
+        //                color: '#DF5353' // red
+        //            }]
+        //        },
 
-                series: [{
-                    name: 'Speed',
-                    data: [80],
-                    tooltip: {
-                        valueSuffix: ' km/h'
-                    }
-                }]
+        //        series: [{
+        //            name: 'Speed',
+        //            data: [80],
+        //            tooltip: {
+        //                valueSuffix: ' km/h'
+        //            }
+        //        }]
 
-            },
-        // Add some life
-        function (chart) {
-            if (!chart.renderer.forExport) {
-                setInterval(function () {
-                    var point = chart.series[0].points[0],
-                        newVal,
-                        inc = Math.round((Math.random() - 0.5) * 20);
+        //    },
+        //// Add some life
+        //function (chart) {
+        //    if (!chart.renderer.forExport) {
+        //        setInterval(function () {
+        //            var point = chart.series[0].points[0],
+        //                newVal,
+        //                inc = Math.round((Math.random() - 0.5) * 20);
 
-                    newVal = point.y + inc;
-                    if (newVal < 0 || newVal > 200) {
-                        newVal = point.y - inc;
-                    }
+        //            newVal = point.y + inc;
+        //            if (newVal < 0 || newVal > 200) {
+        //                newVal = point.y - inc;
+        //            }
 
-                    point.update(newVal);
+        //            point.update(newVal);
 
-                }, 3000);
-            }
-        });
-        }
+        //        }, 3000);
+        //    }
+        //});
+        //}
     </script>
 </head>
 <body>
     <div style="margin: 10px;">
-        <table style="width: 100%">
+        @*<table style="width: 100%" style="display:none">
             <tr>
                 <td>
                     <div class="Task" style="background-color: #E7191B">
@@ -404,11 +396,11 @@
                     </div>
                 </td>
             </tr>
-        </table>
-        <div style="margin-left: 20px; margin-right: 30px;">
+        </table>*@
+        @*<div style="margin-left: 20px; margin-right: 30px;">
             <table style="width: 100%">
                 <tr>
-                    <td style="width: 60%">
+                    <td style="width: 80%">
                         <div id="containerA"></div>
                     </td>
                     <td style="width: 40%">
@@ -416,6 +408,9 @@
                     </td>
                 </tr>
             </table>
+        </div>*@
+        <div style="margin-left: 20px; margin-right: 30px;">
+            <div id="containerA"></div>
         </div>
         <div style="margin-left: 20px; margin-right: 30px;">
             <div id="container"></div>
