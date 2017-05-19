@@ -101,6 +101,7 @@
     <Compile Include="ExampleModule\Base_PhoneNote.cs" />
     <Compile Include="ExampleModule\POOrder.cs" />
     <Compile Include="ExampleModule\POOrderEntry.cs" />
+    <Compile Include="FYModule\FY_ObjectTracking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

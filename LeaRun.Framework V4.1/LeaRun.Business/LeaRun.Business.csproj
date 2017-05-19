@@ -45,6 +45,7 @@
     <Compile Include="CommonModule\Base_InterfaceManageBll.cs" />
     <Compile Include="CommonModule\Base_ShortcutsBll.cs" />
     <Compile Include="CommonModule\Base_CodeRuleBll.cs" />
+    <Compile Include="CommonModule\FY_ObjectTrackingBll.cs" />
     <Compile Include="CommonModule\FY_RapidBll.cs" />
     <Compile Include="CommonModule\TestTableBll.cs" />
     <Compile Include="ExampleModule\Base_EmailBll.cs" />

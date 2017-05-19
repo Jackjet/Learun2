@@ -157,6 +157,8 @@
     <Compile Include="Areas\ExampleModule\Controllers\ReportController.cs" />
     <Compile Include="Areas\ExampleModule\Controllers\TestTableController.cs" />
     <Compile Include="Areas\ExampleModule\ExampleModuleAreaRegistration.cs" />
+    <Compile Include="Areas\FYModule\Controllers\ObjectTrackingController.cs" />
+    <Compile Include="Areas\FYModule\FYModuleAreaRegistration.cs" />
     <Compile Include="Areas\Thirdparty\Controllers\CkediterController.cs" />
     <Compile Include="Areas\Thirdparty\Controllers\DeclarationController.cs" />
     <Compile Include="Areas\Thirdparty\Controllers\HighchartsController.cs" />
@@ -226,6 +228,7 @@
     <Content Include="Content\Images\dropdown-icon.png" />
     <Content Include="Content\Images\error-bg.png" />
     <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\fileType\application_put.png" />
     <Content Include="Content\Images\fileType\css_24.png" />
     <Content Include="Content\Images\fileType\css_72.png" />
     <Content Include="Content\Images\fileType\doc_24.png" />
@@ -8532,6 +8535,7 @@
     <Content Include="Content\Scripts\uploadify\uploadify.swf" />
     <Content Include="Content\Scripts\validator\learunui-validator.js" />
     <Content Include="Content\skins\theme_red\theme_red.css" />
+    <Content Include="Content\Styles\buttons.css" />
     <Content Include="Content\Styles\learunui-accordion.css" />
     <Content Include="Content\Styles\learunui-accordionTree.css" />
     <Content Include="Content\Styles\learunui-framework.css" />
@@ -8613,12 +8617,16 @@
     <Content Include="Areas\CommonModule\Views\Flow\Index.cshtml" />
     <Content Include="Areas\CommonModule\Views\Flow\Form.cshtml" />
     <Content Include="Areas\CommonModule\Views\Flow\Node.cshtml" />
-    <Content Include="Areas\FYModule\Views\Rapid\Index.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\Index.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\Form.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\RapidMonthlyReport.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\PictureReport.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\PictureIndex.cshtml" />
+    <Content Include="Areas\FYModule\Views\Web.config" />
+    <Content Include="Areas\FYModule\Views\ObjectTracking\Index.cshtml" />
+    <Content Include="Areas\FYModule\Views\ObjectTracking\Form.cshtml" />
+    <Content Include="Areas\CommonModule\Views\Rapid\FormNew.cshtml" />
+    <Content Include="Areas\FYModule\Views\ObjectTracking\FormEdit.cshtml" />
     <None Include="Properties\PublishProfiles\LR-FDMS.pubxml" />
     <Content Include="Views\Home\SkinIndex.cshtml" />
     <Content Include="Views\Login\Default.cshtml" />
@@ -8913,9 +8921,7 @@
   <ItemGroup>
     <Content Include="Areas\ExampleModule\Views\Print\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\FYModule\Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Content\Report\BankAnalyze\BankAnalyze.rdlc" />
     <EmbeddedResource Include="Content\Report\Money\Money.rdlc" />
