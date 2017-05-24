@@ -87,14 +87,14 @@ namespace LeaRun.Business
             List<DbParameter> parameter = new List<DbParameter>();
             if (!string.IsNullOrEmpty(CompanyId))
             {
-                strSql.Append(" AND CompanyId = @CompanyId");
-                parameter.Add(DbFactory.CreateDbParameter("@CompanyId", CompanyId));
+                //strSql.Append(" AND CompanyId = @CompanyId");
+                //parameter.Add(DbFactory.CreateDbParameter("@CompanyId", CompanyId));
             }
             if (!ManageProvider.Provider.Current().IsSystem)
             {
-                strSql.Append(" AND ( DepartmentId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
-                strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
-                strSql.Append(" ) )");
+                //strSql.Append(" AND ( DepartmentId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
+                //strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
+                //strSql.Append(" ) )");
             }
             strSql.Append(" ORDER BY CompanyId ASC,SortCode ASC");
             return Repository().FindTableBySql(strSql.ToString(), parameter.ToArray());

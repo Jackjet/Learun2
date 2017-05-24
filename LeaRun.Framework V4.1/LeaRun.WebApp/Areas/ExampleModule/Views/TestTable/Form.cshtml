@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "测试页面》测试页面";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        
+        InitControl();
+        //判断新增的时候。如果选择了left项目，公司、部门会自动赋值
+        
+    })
+   
+    //得到一个对象实体
+    function InitControl() {
+        if (!!GetQuery('KeyValue')) {
+            AjaxJson("/ExampleModule/TestTable/SetTestForm", { KeyValue: GetQuery('KeyValue') }, function (data) {
+                SetWebControls(data);
+                BindDepartment(); $("#DepartmentId").val(data.DepartmentId);
+                $("#Password").val("******");
+            });
+        }
+    }
+    //保存事件
+    function AcceptClick() {
+        if (!CheckDataValid('#form1')) {
+            return false;
+        }
+        Loading(true, "正在提交数据...");
+        window.setTimeout(function () {
+            var postData = GetWebControls("#form1");
+            postData["BuildFormJson"] = JSON.stringify(GetWebControls("#CustomAttribute"));
+            AjaxJson("/ExampleModule/TestTable/SubmitTestTableForm?KeyValue=" + GetQuery('KeyValue'), postData, function (data) {
+                tipDialog(data.Message, 3, data.Code);
+                top.frames[tabiframeId()].windowload();
+                closeDialog();
+            });
+        }, 200);
+    }
+</script>
+<form id="form1">
+    <div id="message" style="display: none; padding: 1px; padding-bottom: 0px;"></div>
+    <div class="bd" style="border-bottom: none; margin: 1px;">
+        <div class="tipstitle_title settingtable bold bd todayInfoPanelTab rightPanelTitle_normal">
+            <div class="tab_list_top" style="position: absolute">
+                <div id="Tabbasic" class="tab_list bd actived" onclick="Tabchange('basic')">基本信息</div>
+                <div id="Tabwork" class="tab_list bd " onclick="Tabchange('work')">相关流程</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ScrollBar" style="margin: 1px; overflow: hidden;">
+        <!--基本信息-->
+        <div id="basic" class="tabPanel">
+            <table class="form">
+                 <tr>
+                    <th class="formTitle">创建人：</th>
+                    <td class="formValue">
+                        <input id="CreateUserName" type="text" class="txt" />
+                    </td>
+                    <th class="formTitle">创建日期：</th>
+                    <td class="formValue">
+                        <input id="CreateDate" type="text" class="txt Wdate" onfocus="WdatePicker()" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">备注：</th>
+                    <td class="formValue" colspan="3">
+                        <input id="Remark" type="text" class="txt" />
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <th class="formTitle">Code：</th>
+                    <td class="formValue">
+                        <input id="Code" type="text" class="txt" datacol="yes" err="Code" checkexpession="NumOrNull" onfocus="IsNumber(this.id)" />
+                    </td>
+                    <th class="formTitle">FullName：
+                    </th>
+                    <td class="formValue">
+                        <input id="FullName" type="text" class="txt" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--相关流程，自定义流程-->
+        <div id="work" class="tabPanel" style="display: none;">
+            <table class="form">
+               
+
+
+               
+            </table>
+        </div>
+        <!--自定义属性-->
+       
+    </div>
+
+</form>

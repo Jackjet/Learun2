@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>欢迎使用</title>
+    <!--框架必需start-->
+    <link href="~/Content/Styles/learunui-framework.css" rel="stylesheet" />
+    <link href="~/Content/Styles/learunui-accordion.css" rel="stylesheet" />
+    <script src="~/Content/Scripts/jquery/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/Scripts/learunui-framework.js"></script>
+    <!--框架必需end-->
+    <!--第三方统计图start-->
+    <script src="~/Content/Scripts/highcharts/highcharts.js"></script>
+    <script src="~/Content/Scripts/highcharts/highcharts-more.js"></script>
+    <script src="~/Content/Scripts/highcharts/modules/exporting.js"></script>
+    <!--第三方统计图end-->
+    <script>
+        $(function () {
+            LodaChartData();
+            Browser();
+            //Speedometer();
+        })
+        function LodaChartData() {
+            var x = [];//X轴
+            var y = [];//Y轴
+            var xtext = [];//X轴TEXT
+            var color = [];
+            var durl = encodeURI('@Url.Action("GetPictueData", "Rapid")');
+            $.ajax({
+                type: "post",
+                url: durl,
+                async: false,
+                success: function (data) {
+                    var json = eval("(" + data + ")");
+                    alert(json);
+                    var s = 1;
+                    for (var key in json.list) {
+                        json.list[key].y = json.list[key].rapidcount; //给Y轴赋值
+                        xtext = json.list[key].month;//给X轴TEXT赋值
+                        json.list[key].color = color[key];
+                    }
+                    chart.series[0].setData(json.list);//数据填充到highcharts上面
+                }
+
+            });
+            var chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',
+                    type: 'pie' //显示类型 柱形
+                },
+                title: {
+                    text: '产量分布图' //图表的标题
+                },
+                xAxis: {
+                    categories: xtext
+                },
+                yAxis: {
+                    title: {
+                        text: '产量' //Y轴的名称
+                    },
+                },
+                series: [{
+                    name: "产量"
+                }]
+            });
+        }
+    </script>
+</head>
+<body>
+    <div style="margin: 10px;">
+        
+        <div style="margin-left: 20px; margin-right: 30px;">
+            <div id="containerA"></div>
+        </div>
+        <div style="margin-left: 20px; margin-right: 30px;">
+            <div id="container"></div>
+        </div>
+    </div>
+</body>
+</html>

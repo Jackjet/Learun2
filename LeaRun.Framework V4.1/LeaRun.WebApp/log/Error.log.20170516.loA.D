@@ -1,0 +1,9 @@
+2017-05-16 15:08:20,587 [10] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:17:47,691 [23] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:18:50,533 [23] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:20:32,755 [11] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:23:30,400 [16] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:24:00,266 [14] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:25:25,103 [25] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:25:28,294 [25] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。
+2017-05-16 15:26:20,563 [26] ERROR LeaRun.DataAccess.DbHelper - 列名 'res_id' 无效。

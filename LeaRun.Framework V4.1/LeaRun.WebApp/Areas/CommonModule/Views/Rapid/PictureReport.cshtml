@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "图形报表";
+}
+
+<h2>PictureReport</h2>
+ <link href="~/Content/Styles/learunui-framework.css" rel="stylesheet" />
+    <link href="~/Content/Styles/learunui-accordion.css" rel="stylesheet" />
+    <script src="~/Content/Scripts/jquery/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/Scripts/learunui-framework.js"></script>
+<script src="~/Content/Scripts/jquery.echarts/echarts.js"></script>
+<div id="main" style="width: auto;height:400px"></div>
+<div id="main2" style="width: auto;height:400px"></div>
+    <script type="text/javascript">
+
+        var X = new Array();
+        var Y = new Array();;
+
+        var durl = encodeURI('@Url.Action("GetPictueData", "Rapid")');
+        $.ajax({
+            type: "post",
+            url: durl,
+            async: false,
+            success: function (data) {
+                //var s = 1;
+                //for (var key in json.list) {
+                //    json.list[key].y = json.list[key].rapidcount; //给Y轴赋值
+                //    xtext = json.list[key].month;//给X轴TEXT赋值
+                //    json.list[key].color = color[key];
+                //}
+                //chart.series[0].setData(json.list);//数据填充到highcharts上面
+                var dataA = new Array();
+                dataA = data.split("|");
+                
+                X = dataA[1].split(",");
+                Y = dataA[0].split(",");
+                for(var i=0;i<X.length;i++)
+                {
+                    X[i] = X[i] + "月份";
+                }
+                //alert(X);
+                //alert(Y);
+            }
+
+        });
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '问题次数柱状图'
+            },
+            tooltip: {},
+            legend: {
+                data: ['问题次数']
+            },
+            xAxis: {
+                data: X
+            },
+            yAxis: {},
+            series: [{
+                name: '问题次数',
+                type: 'bar',
+                data: Y
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+
+
+
+        var DataForMyChart2 = new Array();
+        
+        var c1=new Array();
+        var c2=new Array();
+        var durl = encodeURI('@Url.Action("GetPieData", "Rapid")');
+        $.ajax({
+            type: "post",
+            url: durl,
+            async: false,
+            success: function (data) {
+                var xx;
+                var dataA = new Array();
+                //var i = 0;
+                dataA = data.split("|");
+
+                
+                c1 = dataA[0].split(",");
+                c2 = dataA[1].split(",");
+                for (var i = 0; i < c1.length; i++)
+                {
+                    var TempObject = {};
+                    TempObject["value"] = parseInt(c1[i]);
+
+                    TempObject["name"] = c2[i]+"("+c1[i]+"单)";
+
+                    DataForMyChart2.push(TempObject);
+                    //DataForMyChart2[i] = TempObject;
+                    //TempObject = null;
+                    //alert(DataForMyChart2[i].name);
+                    //i++;
+                }
+                
+            }
+
+        });
+
+        //alert(DataForMyChart2[0].name);
+        //alert(DataForMyChart2[1].name);
+
+        var myChart2 = echarts.init(document.getElementById('main2'));
+        //饼图
+        myChart2.setOption({
+            title: {
+                text: '各部门问题次数'
+            },
+            roseType: 'angle',
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    data: DataForMyChart2
+                }
+            ]
+        })
+        
+    </script>

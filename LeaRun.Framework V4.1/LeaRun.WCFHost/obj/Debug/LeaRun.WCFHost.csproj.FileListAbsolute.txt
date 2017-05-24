@@ -12,3 +12,8 @@ E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.
 E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.pdb
 E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.dll
 E:\asoft\pssdss\code\daixiao\BS开发框架\快速信息化系统开发框架V4.1\code\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.WCFHost\bin\LeaRun.WCFHost.pdb
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.csprojResolveAssemblyReference.cache
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.dll
+D:\Work\Projects\GitHubProject\Learun\LeaRun.Framework V4.1\LeaRun.WCFHost\obj\Debug\LeaRun.WCFHost.pdb

@@ -255,6 +255,16 @@ function GetWebControls(element) {
                 }
                 break;
             default:
+                //value = value.replace(/\\n/g, "\\n")
+                //                      .replace(/\\'/g, "\\'")
+                //                      .replace(/\\"/g, "\\\"")
+                //                      .replace(/\\&/g, "\\&")
+                //                      .replace(/\\r/g, "\\r")
+                //                      .replace(/\\t/g, "\\t")
+                //                      .replace(/\\b/g, "\\b")
+                //                      .replace(/\\f/g, "\\f");
+                value = value.replace(/[\n]/ig, '');
+                //alert(value);
                 if (value == "") {
                     value = "&nbsp;";
                 }
@@ -338,7 +348,15 @@ function GetTableDataJson(tableId) {
                         pk_value = "0";
                     }
                 } else {
-                    pk_value = $("#" + pk_id).val();
+                    pk_value = $("#" + pk_id).val().replace(/\\n/g, "\\n")
+                   .replace(/\\'/g, "\\'")
+                   .replace(/\\"/g, "\\\"")
+                   .replace(/\\&/g, "\\&")
+                   .replace(/\\r/g, "\\r")
+                   .replace(/\\t/g, "\\t")
+                   .replace(/\\b/g, "\\b")
+                   .replace(/\\f/g, "\\f");
+
                 }
                 var array = new Array();
                 array = pk_id.split("➩"); //字符分割
@@ -374,6 +392,7 @@ function GetTableDataJson(tableId) {
     if (trjson == '{}') {
         trjson = "";
     }
+    
     return '[' + trjson + ']';
 }
 /**

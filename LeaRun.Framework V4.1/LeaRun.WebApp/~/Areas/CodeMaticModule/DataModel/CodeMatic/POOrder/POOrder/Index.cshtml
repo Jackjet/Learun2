@@ -1,0 +1,78 @@
+@{
+    ViewBag.Title = "订单主表";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        GetGrid();
+    })
+    //加载表格
+    function GetGrid() {
+        $("#gridTable").jqGrid({
+        url: "@Url.Content("~/CommonModule/POOrder/GridPageJson")",
+        datatype: "json",
+        height: $(window).height() - 149,
+        autowidth: true,
+        colModel: [
+                { label: '订单主键', name: 'POOrderId', index: 'POOrderId', width: 0, align: 'left',sortable: true  },
+                { label: '父级主键', name: 'ParentId', index: 'ParentId', width: 0, align: 'left',sortable: true  },
+                { label: '订单单号', name: 'BillNo', index: 'BillNo', width: 0, align: 'left',sortable: true  },
+                { label: '订单日期', name: 'BillDate', index: 'BillDate', width: 0, align: 'left',sortable: true  },
+                { label: '订单方式', name: 'Method', index: 'Method', width: 0, align: 'left',sortable: true  },
+                { label: '结算方式', name: 'Clearing', index: 'Clearing', width: 0, align: 'left',sortable: true  },
+                { label: '结算日期', name: 'ClearingTime', index: 'ClearingTime', width: 0, align: 'left',sortable: true  },
+                { label: '币别', name: 'Currency', index: 'Currency', width: 0, align: 'left',sortable: true  },
+                { label: '汇率', name: 'ExchangeRate', index: 'ExchangeRate', width: 0, align: 'left',sortable: true  },
+                { label: '供应商', name: 'SupplierId', index: 'SupplierId', width: 0, align: 'left',sortable: true  },
+                { label: '交货地点', name: 'FetchAdd', index: 'FetchAdd', width: 0, align: 'left',sortable: true  },
+                { label: '采购员主键', name: 'SalesmanId', index: 'SalesmanId', width: 0, align: 'left',sortable: true  },
+                { label: '采购员', name: 'Salesman', index: 'Salesman', width: 0, align: 'left',sortable: true  },
+                { label: '录入类型：0-PC手工录入,1-外部引入,2-PDA录入,3-手机端录入,4-其它录入', name: 'POOrderType', index: 'POOrderType', width: 0, align: 'left',sortable: true  },
+                { label: '关闭：0-正常，1-作废', name: 'Cancellation', index: 'Cancellation', width: 0, align: 'left',sortable: true  },
+                { label: '制单部门主键', name: 'CreateDepartmentId', index: 'CreateDepartmentId', width: 0, align: 'left',sortable: true  },
+                { label: '制单部门', name: 'CreateDepartmentName', index: 'CreateDepartmentName', width: 0, align: 'left',sortable: true  },
+                { label: '制单人主键', name: 'CreateUserId', index: 'CreateUserId', width: 0, align: 'left',sortable: true  },
+                { label: '制单人', name: 'CreateUserName', index: 'CreateUserName', width: 0, align: 'left',sortable: true  },
+                { label: '制单时间', name: 'CreateDate', index: 'CreateDate', width: 0, align: 'left',sortable: true  },
+                { label: '提交订单；0-未提交,1-已提交', name: 'IsSubmit', index: 'IsSubmit', width: 0, align: 'left',sortable: true  },
+                { label: '删除标记', name: 'DeleteMark', index: 'DeleteMark', width: 0, align: 'left',sortable: true  },
+                { label: '变更部门主键', name: 'ModifyDepartmentId', index: 'ModifyDepartmentId', width: 0, align: 'left',sortable: true  },
+                { label: '变更部门', name: 'ModifyDepartmentName', index: 'ModifyDepartmentName', width: 0, align: 'left',sortable: true  },
+                { label: '变更人主键', name: 'ModifyUserId', index: 'ModifyUserId', width: 0, align: 'left',sortable: true  },
+                { label: '变更人', name: 'ModifyUserName', index: 'ModifyUserName', width: 0, align: 'left',sortable: true  },
+                { label: '变更时间', name: 'ModifyDate', index: 'ModifyDate', width: 0, align: 'left',sortable: true  },
+                { label: '审核状态码', name: 'AuditStatus', index: 'AuditStatus', width: 0, align: 'left',sortable: true  },
+                { label: '审核状态', name: 'AuditStatusName', index: 'AuditStatusName', width: 0, align: 'left',sortable: true  },
+                { label: '备注', name: 'Remark', index: 'Remark', width: 0, align: 'left',sortable: true  },
+        ],
+        pager: "#gridPager",
+        sortname: '',
+        sortorder: 'desc',
+        rownumbers: true,
+        shrinkToFit: false,
+        gridview: true,
+    });
+}
+    //刷新
+    function windowload() {
+        $("#gridTable").trigger("reloadGrid"); //重新载入
+        
+    }
+</script>
+<div class="leftline rightline QueryArea" style="margin: 1px; margin-top: 0px; margin-bottom: 0px;">
+    <table border="0" class="form-find" style="height: 45px;">
+        <tr>
+            <th>关键字：</th>
+            <td>
+                <input id="keywords" type="text" class="txt" style="width: 200px" />
+            </td>
+            <td>
+                <input id="btnSearch" type="button" class="btnSearch" value="搜 索" onclick="btn_Search()" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="topline rightline" style="margin: 1px; margin-top: -1px;">
+    <table id="gridTable"></table>
+    <div id="gridPager"></div>
+</div>

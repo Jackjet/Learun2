@@ -29,7 +29,7 @@ namespace LeaRun.WebApp
         /// 列表视图
         /// </summary>
         /// <returns></returns>
-        [ManagerPermission(PermissionMode.Enforce)]
+        //[ManagerPermission(PermissionMode.Enforce)]
         public virtual ActionResult Index()
         {
             return View();
@@ -40,7 +40,7 @@ namespace LeaRun.WebApp
         /// <param name="ParameterJson">查询条件</param>
         /// <param name="Gridpage">分页条件</param>
         /// <returns></returns>
-        [LoginAuthorize]
+        //[LoginAuthorize]
         public virtual JsonResult GridPageJson(string ParameterJson, JqGridParam jqgridparam)
         {
             try
@@ -112,7 +112,7 @@ namespace LeaRun.WebApp
         /// <param name="ParentId">判断是否有子节点</param>
         /// <returns></returns>
         [HttpPost]
-        [ManagerPermission(PermissionMode.Enforce)]
+        //[ManagerPermission(PermissionMode.Enforce)]
         public virtual ActionResult Delete(string KeyValue, string ParentId)
         {
             string[] array = KeyValue.Split(',');
@@ -148,7 +148,7 @@ namespace LeaRun.WebApp
         /// 明细视图
         /// </summary>
         /// <returns></returns>
-        [ManagerPermission(PermissionMode.Enforce)]
+        //[ManagerPermission(PermissionMode.Enforce)]
         public virtual ActionResult Detail()
         {
             return View();
@@ -157,7 +157,7 @@ namespace LeaRun.WebApp
         /// 表单视图
         /// </summary>
         /// <returns></returns>
-        [ManagerPermission(PermissionMode.Enforce)]
+        //[ManagerPermission(PermissionMode.Enforce)]
         public virtual ActionResult Form()
         {
             return View();

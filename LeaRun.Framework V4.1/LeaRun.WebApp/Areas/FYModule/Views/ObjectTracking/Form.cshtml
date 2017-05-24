@@ -1,0 +1,233 @@
+﻿@{
+    ViewBag.Title = "QSB》事物管理";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    string UserName = ViewData["UserName"] as string;
+}
+
+<link href="~/Content/Scripts/uploadify/uploadify.css" rel="stylesheet" />
+<script src="~/Content/Scripts/uploadify/jquery.uploadify.js"></script>
+
+<style>
+    #grid td {
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+        padding: 6px 2px;
+    }
+
+    #divFileName {
+        width: 310px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    #grid td img {
+        vertical-align: middle;
+        border: 0px solid #fff;
+    }
+
+    .uploadify-queue {
+        margin-top: 6px;
+    }
+
+    .uploadify-queue-item {
+        width: 468px;
+        padding-top: 8px;
+        padding-bottom: 7px;
+        margin-top: 0px;
+        border-top: none;
+    }
+
+        .uploadify-queue-item .cancel a {
+            display: none;
+        }
+
+        input { background:#E0FFFF;}
+    textarea {background:#E0FFFF;}
+    select {background:#E0FFFF;}
+</style>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#CreateBy").val('@UserName');
+        $("#CreateBy").attr("disabled", "true");
+        $("#ObjectState").val("进行中");
+        $("#ObjectState").attr("disabled", "true");
+        uploadify();
+    });
+    $(function () {
+        
+        InitControl();
+        //判断新增的时候。如果选择了left项目，公司、部门会自动赋值
+        BindResponseBy();
+        
+        
+    })
+   
+    //得到一个对象实体
+    function InitControl() {
+        if (!!GetQuery('KeyValue')) {
+            AjaxJson("/FYModule/ObjectTracking/SetForm", { KeyValue: GetQuery('KeyValue') }, function (data) {
+                SetWebControls(data);
+                
+            });
+        }
+    }
+    //保存事件
+    function AcceptClick() {
+        if (!CheckDataValid('#form1')) {
+            return false;
+        }
+        Loading(true, "正在提交数据...");
+        window.setTimeout(function () {
+            var postData = GetWebControls("#form1");
+            postData["BuildFormJson"] = JSON.stringify(GetWebControls("#CustomAttribute"));
+            AjaxJson("/FYModule/ObjectTracking/SubmitForm?KeyValue=" + GetQuery('KeyValue'), postData, function (data) {
+                tipDialog(data.Message, 3, data.Code);
+                top.frames[tabiframeId()].windowload();
+                closeDialog();
+            });
+        }, 200);
+    }
+
+    //绑定下拉框
+    function BindResponseBy() {
+        $("#ResponseBy").html("");
+        $("#ResponseBy").append("<option value=''>==请选择==</option>");
+        AjaxJson("/CommonModule/Rapid/ListJson", {}, function (DataJson) {
+            $.each(DataJson, function (i) {
+                $("#ResponseBy").append($("<option></option>").val(DataJson[i].code).html(DataJson[i].RealName));
+            });
+        })
+    }
+
+    var index_uploadify = 1;
+    function uploadify() {
+        //if (!!GetQuery('KeyValue'))
+        //{ alert(11)};
+        $("#uploadify").uploadify({
+            uploader: '/FYModule/ObjectTracking/SubmitUploadifyInsert',
+            swf: '/Content/Scripts/uploadify/uploadify.swf',
+            buttonText: "添加文件",
+            height: 24,
+            width: 70,
+            onFallback: function () {
+                alert("您未安装FLASH控件，无法上传！请安装FLASH控件后再试。");
+            },
+            onUploadSuccess: function (file, data, response) {
+                alert("上传成功");
+                var DataJson = JSON.parse(data);
+                var address = DataJson.NetworkFile.DescripeAttach;
+                $("#DescripeAttach").val(address);
+                address = address.replace('~', '../../../../');
+                document.getElementById("uploadMessage").style.display = "block";
+                document.getElementById("uploadMessage").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+                
+                //$("#tt").val(html);
+                //top.frames[tabiframeId()].windowload();
+
+                //document.getElementById("tt").innerText = "<a href=\"~/Resource/Document/NetworkDisk/System/20170504/f9127be9-5695-4214-9eab-189b0e206113.txt\" download=\"附件下载\">附件下载</a>";
+            },
+            onUploadError: function () { alert("请先保存本单，再上传附件") }
+        });
+    }
+</script>
+
+
+<form id="form1">
+    <div id="message" style="display: none; padding: 1px; padding-bottom: 0px;"></div>
+    <div class="bd" style="border-bottom: none; margin: 1px;">
+        <div class="tipstitle_title settingtable bold bd todayInfoPanelTab rightPanelTitle_normal">
+            <div class="tab_list_top" style="position: absolute">
+                <div id="Tabbasic" class="tab_list bd actived" onclick="Tabchange('basic')">基本信息</div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="ScrollBar" style="margin: 1px; overflow: hidden;">
+        <!--基本信息-->
+        <div id="basic" class="tabPanel">
+            <table class="form">
+                 <tr>
+                    <th class="formTitle">事物状态：</th>
+                    <td class="formValue">
+                        <input id="ObjectState" type="text" class="txt" />
+                    </td>
+                    <th class="formTitle">事务类别：</th>
+                    <td class="formValue">
+                        <input id="ObjectType" type="text" class="txt" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">问题录入人：</th>
+                    <td class="formValue">
+                        <input id="CreateBy" type="text" class="txt" />
+                    </td>
+                    <th class="formTitle">责任人：</th>
+                    <td class="formValue">
+                         <select id="ResponseBy" class="txtselect"> </select>
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="formTitle">决议日期：</th>
+                    <td class="formValue">
+                        
+                        <input id="DecideDate" type="text" class="txt Wdate" onfocus="WdatePicker()" style="background:#E0FFFF;" />
+                    </td>
+                    <th class="formTitle">完成日期：</th>
+                    <td class="formValue">
+                        <input id="PlanFinishDate" type="text" class="txt Wdate" onfocus="WdatePicker()" style="background:#E0FFFF;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">上传附件：</th>
+                    <td class="formValue" colspan="2">
+                        
+                        <input id="uploadify" name="uploadify" type="file" style="width:100px" />
+                    </td>
+                    <td class="formValue"> <label id="uploadMessage" style="display:none" /></td>
+                </tr>
+                <tr style="display:none">
+                    <th class="formTitle">附件地址：</th>
+                    <td class="formValue">
+                        <input id="DescripeAttach" type="text" class="txt" />
+                        
+                    </td>
+                    
+                    </tr>
+                <tr style="display:none">
+                    <th class="formTitle">事物描述：</th>
+                    <td class="formValue" colspan="3">
+                       <textarea  id="ObjectDescripe"  class="txt" style="width:450px;height:80px;" /></textarea>
+                    </td>
+                    
+                </tr>
+
+                 <tr style="display:none">
+                    <th class="formTitle">实施进度：</th>
+                    <td class="formValue" colspan="3">
+                       <textarea  id="ObjectProgress"  class="txt" style="width:450px;height:80px;" /></textarea>
+                    </td>
+                    
+                </tr>
+
+                <tr style="display:none">
+                    <th class="formTitle">跟踪状态：</th>
+                    <td class="formValue" colspan="3">
+                       <textarea  id="TrackingStates"  class="txt" style="width:450px;height:80px;" /></textarea>
+                    </td>
+                    
+                </tr>
+                
+            </table>
+        </div>
+        
+       
+    </div>
+
+</form>

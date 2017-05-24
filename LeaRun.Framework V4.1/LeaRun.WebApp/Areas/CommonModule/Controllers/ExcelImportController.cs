@@ -283,7 +283,7 @@ namespace LeaRun.WebApp.Areas.CommonModule.Controllers
         /// µ¼³öExcel
         /// </summary>
         /// <returns></returns>
-        [ManagerPermission(PermissionMode.Enforce)]
+        
         public ActionResult DeriveDialog()
         {
             return View();

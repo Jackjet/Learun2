@@ -1,0 +1,392 @@
+﻿@{
+    ViewBag.Title = "QSB》事物管理";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    
+    string role = ViewData["dt"] as string;
+}
+
+<link href="~/Content/Styles/buttons.css" rel="stylesheet" />
+<link href="~/Content/Scripts/uploadify/uploadify.css" rel="stylesheet" />
+<script src="~/Content/Scripts/uploadify/jquery.uploadify.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        $("#CreateBy").attr("disabled", "true");
+        $("#ObjectState").val("进行中");
+        $("#ObjectState").attr("disabled", "true");
+        $("#ObjectDescripe").attr("disabled","true");
+    });
+    $(function () {
+
+        InitControl();
+        //判断新增的时候。如果选择了left项目，公司、部门会自动赋值
+        BindResponseBy();
+        //uploadify();
+
+
+        $('input[id$="Date"]').each(function () {
+            var w = this.value.indexOf("T");
+            //alert(this.value);
+            if (w > 0) {
+
+                this.value = this.value.substring(0, w);
+                //alert(this.value);
+            }
+        });
+        $('input[id$="dt"]').each(function () {
+            var w = this.value.indexOf("T");
+            if (w > 0) {
+                this.value = this.value.substring(0, w);
+            }
+        });
+        $('input[id$="Time"]').each(function () {
+            var w = this.value.indexOf("T");
+            //alert(w);
+            //alert(this.value);
+            if (w > 0) {
+                this.value = this.value.substring(0, w);
+            }
+        });
+
+
+    })
+
+    //得到一个对象实体
+    function InitControl() {
+        if (!!GetQuery('KeyValue')) {
+            AjaxJson("/FYModule/ObjectTracking/SetForm", { KeyValue: GetQuery('KeyValue') }, function (data) {
+                SetWebControls(data);
+                if (String(data["Attach"]) != "" && String(data["Attach"]) != "null" && data["Attach"] != undefined) {
+                    if ('@role' == "质保部审批") {
+                        
+                        uploadify();
+                    }
+                    else {
+                        
+                        document.getElementById("uploadify").style.display = "none";
+                    }
+                    //document.getElementById("uploadify").style.display = "none";
+                    //document.getElementById("uploadify").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+                    //~不生效，只能替换相对地址
+                    var address = String(data["Attach"]).replace('~', '../../../../')
+                    document.getElementById("tt").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+                    document.getElementById("tt").style.display = "block";
+                }
+                else {
+                    //alert(11);
+                    uploadify();
+                }
+                if (String(data["DescripeAttach"]) != "" && String(data["DescripeAttach"]) != "null" && data["DescripeAttach"] != undefined) {
+                    
+                    var address = String(data["DescripeAttach"]).replace('~', '../../../../');
+                   
+                    document.getElementById("uploadifyAttach").style.display = "none";
+                    document.getElementById("DescripeAttach").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+                }
+                else { uploadifyAttach();}
+            });
+        }
+    }
+    //保存事件
+    function AcceptClick() {
+        if (!CheckDataValid('#form1')) {
+            return false;
+        }
+        Loading(true, "正在提交数据...");
+        window.setTimeout(function () {
+            var postData = GetWebControls("#form1");
+            postData["BuildFormJson"] = JSON.stringify(GetWebControls("#CustomAttribute"));
+            AjaxJson("/FYModule/ObjectTracking/SubmitForm?KeyValue=" + GetQuery('KeyValue'), postData, function (data) {
+                tipDialog(data.Message, 3, data.Code);
+                top.frames[tabiframeId()].windowload();
+                closeDialog();
+            });
+        }, 200);
+    }
+
+    //绑定下拉框
+    function BindResponseBy() {
+        $("#ResponseBy").html("");
+        $("#ResponseBy").append("<option value=''>==请选择==</option>");
+        AjaxJson("/CommonModule/Rapid/ListJson", {}, function (DataJson) {
+            $.each(DataJson, function (i) {
+                $("#ResponseBy").append($("<option></option>").val(DataJson[i].code).html(DataJson[i].RealName));
+            });
+        })
+    }
+
+    function delay()
+    {
+        var delayDate = $("#delayDate").val();
+        if (delayDate == undefined || delayDate == null || delayDate == "")
+        {
+            alert("请填写延期日期,再点击延期");
+            return false;
+        }
+        var durl = encodeURI('@Url.Action("delay", "ObjectTracking")?KeyValue=' + GetQuery('KeyValue') + '&date=' + delayDate);
+        $.ajax({
+            type: "post",
+            url: durl,
+            async: false,
+            success: function (msg) {
+                if (msg > 0) {
+                    //var tempcon = document.getElementById("tempcon").value;
+                    top.frames[tabiframeId()].windowload();
+                    alert("成功更新" + msg + "条记录");
+
+                    closeDialog();
+                    //SettagValue();
+                    //alert("成功");
+                }
+                else {
+                    alert("出错了！");
+                }
+            },
+            error: function () {
+                alert("出错了");
+            }
+        });
+    }
+
+    function deleteAttach()
+    {
+        if ('@role' != "质保部审批")
+        {
+            alert("你没有权限删除");
+            top.frames[tabiframeId()].windowload();
+            //alert("成功更新" + msg + "条记录");
+
+            closeDialog();
+            return false;
+        }
+        var durl = encodeURI('@Url.Action("deleteAttach", "ObjectTracking")?KeyValue=' + GetQuery('KeyValue'));
+        $.ajax({
+            type: "post",
+            url: durl,
+            async: false,
+            success: function (msg) {
+                if (msg > 0) {
+                    //var tempcon = document.getElementById("tempcon").value;
+                    top.frames[tabiframeId()].windowload();
+                    alert("成功更新" + msg + "条记录");
+
+                    closeDialog();
+                    //SettagValue();
+                    //alert("成功");
+                }
+                else {
+                    alert("出错了！");
+                }
+            },
+            error: function () {
+                alert("出错了");
+            }
+        });
+
+    }
+
+
+    var index_uploadify = 1;
+    function uploadify() {
+        //if (!!GetQuery('KeyValue'))
+        //{ alert(11)};
+        $("#uploadify").uploadify({
+            uploader: '/FYModule/ObjectTracking/SubmitUploadify?FolderId=' + GetQuery('KeyValue')+'&tag=Attach',
+            swf: '/Content/Scripts/uploadify/uploadify.swf',
+            buttonText: "添加文件",
+            height: 24,
+            width: 70,
+            onFallback: function () {
+                alert("您未安装FLASH控件，无法上传！请安装FLASH控件后再试。");
+            },
+            onUploadSuccess: function (file, data, response) {
+                alert("上传成功");
+                //alert(file);
+                //alert(data);
+                //var address = String(data["res_msfj"]).replace('~', '../../../../')
+                //document.getElementById("tt").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+
+                //document.getElementById("uploadify").style.display = "none";
+                var DataJson = JSON.parse(data);
+                var address = DataJson.NetworkFile.Attach;
+                address = address.replace('~', '../../../../');
+                document.getElementById("tt").style.display = "block";
+                document.getElementById("tt").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+                //$("#tt").val(html);
+                //top.frames[tabiframeId()].windowload();
+
+                //document.getElementById("tt").innerText = "<a href=\"~/Resource/Document/NetworkDisk/System/20170504/f9127be9-5695-4214-9eab-189b0e206113.txt\" download=\"附件下载\">附件下载</a>";
+            },
+            onUploadError: function () { alert("请先保存本单，再上传附件") }
+        });
+    }
+
+    function uploadifyAttach() {
+        //if (!!GetQuery('KeyValue'))
+        //{ alert(11)};
+        $("#uploadifyAttach").uploadify({
+            uploader: '/FYModule/ObjectTracking/SubmitUploadify?FolderId=' + GetQuery('KeyValue') + '&tag=DescripeAttach',
+            swf: '/Content/Scripts/uploadify/uploadify.swf',
+            buttonText: "添加文件",
+            height: 24,
+            width: 70,
+            onFallback: function () {
+                alert("您未安装FLASH控件，无法上传！请安装FLASH控件后再试。");
+            },
+            onUploadSuccess: function (file, data, response) {
+                alert("上传成功");
+                //alert(file);
+                //alert(data);
+                //var address = String(data["res_msfj"]).replace('~', '../../../../')
+                //document.getElementById("tt").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+
+                //document.getElementById("uploadify").style.display = "none";
+                var DataJson = JSON.parse(data);
+                var address = DataJson.NetworkFile.DescripeAttach;
+                address = address.replace('~', '../../../../');
+                document.getElementById("DescripeAttach").style.display = "block";
+                document.getElementById("DescripeAttach").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+                //$("#tt").val(html);
+                //top.frames[tabiframeId()].windowload();
+
+                //document.getElementById("tt").innerText = "<a href=\"~/Resource/Document/NetworkDisk/System/20170504/f9127be9-5695-4214-9eab-189b0e206113.txt\" download=\"附件下载\">附件下载</a>";
+            },
+            onUploadError: function () { alert("请先保存本单，再上传附件") }
+        });
+    }
+</script>
+
+<style>
+    input { background:#E0FFFF;}
+    textarea {background:#E0FFFF;}
+    select {background:#E0FFFF;}
+</style>
+<form id="form1">
+    <div id="message" style="display: none; padding: 1px; padding-bottom: 0px;"></div>
+    <div class="bd" style="border-bottom: none; margin: 1px;">
+        <div class="tipstitle_title settingtable bold bd todayInfoPanelTab rightPanelTitle_normal">
+            <div class="tab_list_top" style="position: absolute">
+                <div id="Tabbasic" class="tab_list bd actived" onclick="Tabchange('basic')">基本信息</div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="ScrollBar" style="margin: 1px; overflow: hidden;">
+        <!--基本信息-->
+        <div id="basic" class="tabPanel">
+            <table class="form">
+                 <tr>
+                    <th class="formTitle">事物状态：</th>
+                    <td class="formValue">
+                        <input id="ObjectState" type="text" class="txt" disabled="disabled" />
+                    </td>
+                    <th class="formTitle">事务类别：</th>
+                    <td class="formValue">
+                        <input id="ObjectType" type="text" class="txt" disabled="disabled" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">问题录入人：</th>
+                    <td class="formValue">
+                        <input id="CreateBy" type="text" class="txt" />
+                    </td>
+                    <th class="formTitle">责任人：</th>
+                    <td class="formValue">
+                         <select id="ResponseBy" class="txtselect" disabled="disabled"> </select>
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="formTitle">决议日期：</th>
+                    <td class="formValue">
+                        
+                        <input id="DecideDate" type="text" class="txt Wdate" onfocus="WdatePicker()" style="background:#E0FFFF;" />
+                    </td>
+                    <th class="formTitle">完成日期：</th>
+                    <td class="formValue">
+                        <input id="PlanFinishDate" type="text" class="txt Wdate" onfocus="WdatePicker()" style="background:#E0FFFF;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">延迟日期：</th>
+                    <td>
+                    <table>
+                        <tr>
+                    <td class="formValue">
+                        
+                        <input id="delayDate" type="text" class="txt Wdate" onfocus="WdatePicker()" style="background:#E0FFFF;" />
+                    </td>
+                    <td class="formValue" colspan="2"> <button class="button button-caution button-square button-small" onclick="delay()">延期</button> </td>
+                            </tr>
+                    </table>
+                        </td>
+                    <th class="formTitle">延迟次数：</th>
+                    <td class="formValue"><input id="delayCount" type="text" class="txt" disabled="disabled" /> </td>
+                </tr>
+                
+
+
+
+                <tr>
+                    <th class="formTitle">事物描述：</th>
+                    <td class="formValue" colspan="2">
+                       <textarea  id="ObjectDescripe"  class="txt" style="width:300px;height:80px;" /></textarea>
+                    </td>
+                     <td class="formValue">
+                         <table>
+                             <tr>
+                                 <td>
+                    <input id="uploadifyAttach" name="uploadifyAttach" type="file" style="width:100px" />
+                                    </td>
+                                 <td>
+                    <label id="DescripeAttach" />
+                                     </td>
+                                 <td>
+                                      <button class="button button-caution button-square button-small" onclick="deleteAttach()">删除</button>
+                                     </td>
+                                 </tr>
+                             </table>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <th class="formTitle">实施进度：</th>
+                    <td class="formValue" colspan="2">
+                       <textarea  id="ObjectProgress"  class="txt" style="width:300px;height:80px;" /></textarea>
+                    </td>
+                     <td>
+                     <table>
+                            <tr>
+                                <td>
+                    <input id="uploadify" name="uploadify" type="file" style="width:100px" />
+                                    </td>
+                                <td>
+                        <label id="tt" style="display:none" />
+                                    </td>
+                                </tr>
+                            </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="formTitle">跟踪状态：</th>
+                    <td class="formValue" colspan="3">
+                       <textarea  id="TrackingStates"  class="txt" style="width:450px;height:80px;" /></textarea>
+                    </td>
+                    
+                </tr>
+
+
+                
+            </table>
+        </div>
+        <!--相关流程，自定义流程-->
+       
+       
+       
+    </div>
+
+</form>

@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "测试页面》测试页面";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        
+        InitControl();
+        //判断新增的时候。如果选择了left项目，公司、部门会自动赋值
+        
+    })
+   
+    //得到一个对象实体
+    function InitControl() {
+        if (!!GetQuery('KeyValue')) {
+            AjaxJson("/CommonModule/Flow/SetFlowForm", { KeyValue: GetQuery('KeyValue') }, function (data) {
+                SetWebControls(data);
+                BindDepartment(); $("#DepartmentId").val(data.DepartmentId);
+                $("#Password").val("******");
+            });
+        }
+    }
+    //保存事件
+    function AcceptClick() {
+        if (!CheckDataValid('#form1')) {
+            return false;
+        }
+        Loading(true, "正在提交数据...");
+        window.setTimeout(function () {
+            var postData = GetWebControls("#form1");
+            postData["BuildFormJson"] = JSON.stringify(GetWebControls("#CustomAttribute"));
+            AjaxJson("/CommonModule/Flow/SubmitFlowForm?KeyValue=" + GetQuery('KeyValue'), postData, function (data) {
+                tipDialog(data.Message, 3, data.Code);
+                top.frames[tabiframeId()].windowload();
+                closeDialog();
+            });
+        }, 200);
+    }
+     
+
+    //加载标签2流程节点数据
+    function GetGrid() {
+        var SelectRowIndx;
+        $("#gridTable").jqGrid({
+            url: "@Url.Content("~/CommonModule/Flow/GridPageListJson")",
+            datatype: "json",
+            height: $(window).height() - 178,
+            autowidth: true,
+            colModel: [
+                { label: '主键', name: 'flowid', index: 'flowid', width: 80, align: 'left', hidden: true },
+                { label: '工号', name: 'flowname', index: 'flowname', width: 80, align: 'left' },
+
+
+            ],
+            viewrecords: true,
+            rowNum: 30,
+            rowList: [30, 50, 100, 500, 1000],
+            pager: "#gridPager",
+            sortname: 'flowid',
+            sortorder: 'desc',
+            rownumbers: true,
+            shrinkToFit: false,
+            gridview: true,
+            multiselect: true,
+            onSelectRow: function () {
+                SelectRowIndx = GetJqGridRowIndx("#" + this.id);
+            },
+            gridComplete: function () {
+                LoadViewList();
+                $("#" + this.id).jqGrid('setSelection', SelectRowIndx);
+            }
+        });
+        columnModelData("#gridTable");
+        //自应高度
+        $(window).resize(function () {
+            $("#gridTable").setGridHeight($(window).height() - 178);
+        });
+
+        
+    }
+</script>
+<form id="form1">
+    <div id="message" style="display: none; padding: 1px; padding-bottom: 0px;"></div>
+    <div class="bd" style="border-bottom: none; margin: 1px;">
+        <div class="tipstitle_title settingtable bold bd todayInfoPanelTab rightPanelTitle_normal">
+            <div class="tab_list_top" style="position: absolute">
+                <div id="Tabbasic" class="tab_list bd actived" onclick="GetGrid()">修改节点</div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="ScrollBar" style="margin: 1px; overflow: hidden;">
+        <!--基本信息-->
+        <div id="basic" class="tabPanel">
+            <table class="form">
+                 <tr>
+                    <th class="formTitle">流程名称：</th>
+                    <td class="formValue">
+                        <input id="FlowName" type="text" class="txt" />
+                    </td>
+                    
+                </tr>
+                
+            </table>
+            <table class="form" id="gridTable">
+                
+            </table>
+        </div>
+       
+       
+    </div>
+
+</form>

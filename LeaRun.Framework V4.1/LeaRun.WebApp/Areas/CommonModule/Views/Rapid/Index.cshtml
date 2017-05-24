@@ -1,0 +1,757 @@
+﻿@{
+    ViewBag.Title = "QsB";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    .ui-jqgrid tr.jqgrow td {
+white-space: normal !important;
+height:auto;
+vertical-align:text-top;
+padding-top:2px;
+border-bottom:1px solid #E8E8E8;
+border-top:1px solid #E8E8E8;
+}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //GetTree();
+        GetGrid();
+        SwitchListAndView();
+        //绑定键盘按下事件  
+        $(document).keypress(function (e) {
+            //回车键事件  
+            if (e.which == 13) {
+                $("#keywords").focus();
+                $("#keywords").select();
+                $("#btnSearch").click();
+            }
+        });
+    });
+    var CompanyId = "", DepartmentId = "", DepartmentName = "";
+    //加载左边树
+@*    function GetTree() {
+        var itemtree = {
+            onnodeclick: function (item) {
+                if (item.Type == "Company") {
+                    DepartmentId = "";
+                    CompanyId = item.CompanyId;     //公司ID
+                } else if (item.Type == "Department") {
+                    CompanyId = item.parentnodes;
+                    DepartmentId = item.id;         //部门ID
+                    DepartmentName = item.text;     //部门名称
+                }
+                $("#CenterTitle").html(" - " + item.text + "(" + item.value + ")");
+                btn_Search();
+            },
+            url: "@Url.Content("~/CommonModule/Department/TreeJson")"
+        };
+        $("#ItemsTree").treeview(itemtree);
+    }*@
+    //搜索
+    function btn_Search() {
+        var keywords = $("#keywords").val();
+        $("#gridTable").jqGrid('setGridParam', {
+            url: "@Url.Content("~/CommonModule/Rapid/GridPageListJson")?keywords=" + escape(keywords) + "&CompanyId=" + CompanyId + "&DepartmentId=" + DepartmentId, page: 1
+        }).trigger('reloadGrid');
+    }
+
+
+    //加载表格
+    function GetGrid() {
+        var SelectRowIndx;
+        $("#gridTable").jqGrid({
+            url: "@Url.Content("~/CommonModule/Rapid/GridPageListJson")",
+            datatype: "json",
+            height: $(window).height() - 178,
+            //width:'100%',
+            autowidth: true,
+            colModel: [
+                { label: '主键', name: 'res_id', index: 'res_id', width: 80, align: 'left', hidden: true },
+                { label: '状态', name: 'rapidstate', index: 'rapidstate', width: 80, align: 'left',formatter:StateChange },
+                { label: '问题内容描述', name: 'res_ms', index: 'res_ms', width: 150, align: 'left', formatter: LengthSubFj },
+                { label: '发生日期', name: 'res_cdate', index: 'res_cdate', width: 70, align: 'left',formatter:dateFormat},
+                { label: '负责人', name: 'realname', index: 'realname', width: 65, align: 'center' },
+                { label: '部门', name: 'fullname', index: 'fullname', width: 100, align: 'center' },
+                { label: '遏制表', name: 'yzb', index: 'yzb', width: 65, align: 'center', formatter: colorChangeyzb },
+                { label: '根本原因</br>分析', name: 'fx', index: 'fx', width: 65, align: 'center', formatter: colorChangefx },
+                { label: '纠正措施', name: 'cs', index: 'cs', width: 65, align: 'center', formatter: colorChangecs },
+                { label: '防错法', name: 'fcf', index: 'fcf', width: 65, align: 'center', formatter: colorChangefcf },
+                { label: '分层审核', name: 'fcsh', index: 'fcsh', width: 65, align: 'center', formatter: colorChangefcsh },
+                { label: '措施跟踪', name: 'csgz', index: 'csgz', width: 65, align: 'center', formatter: colorChangecsgz },
+                { label: 'FMEA/CP</br>更新', name: 'fmea', index: 'fmea', width: 65, align: 'center', formatter: colorChangefmea },
+                { label: '标准更新', name: 'bzgx', index: 'bzgx', width: 65, align: 'center', formatter: colorChangebzgx },
+                { label: '经验教训', name: 'jyjx', index: 'jyjx', width: 65, align: 'center', formatter: colorChangejyjx },
+                { label: '未按进度完成原因', name: 'notcompletereason', index: 'notcompletereason', width: 150, align: 'left', formatter: LengthSub },
+                { label: '对策措施', name: 'action', index: 'action', width: 150, align: 'left', formatter: LengthSub },
+                { label: '计划完成', name: 'plantime', index: 'plantime', width: 70, align: 'left', formatter: dateFormat },
+                { label: '实际完成', name: 'realtime', index: 'realtime', width: 70, align: 'left', formatter: dateFormat },
+                { label: '完成及时率', name: 'completerate', index: 'completerate', width: 65, align: 'right' },
+                { label: '问题内容附件', name: 'res_msfj', index: 'res_msfj', width: 65, align: 'right', hidden: true },
+                { label: '遏制表附件', name: 'res_yzbfj', index: 'res_yzbfj', width: 65, align: 'right', hidden: true },
+                { label: '根本原因附件', name: 'res_fxfj', index: 'res_fxfj', width: 65, align: 'right', hidden: true },
+                { label: '纠正措施附件', name: 'res_csfj', index: 'res_csfj', width: 65, align: 'right', hidden: true },
+                { label: '防错法附件', name: 'res_fcffj', index: 'res_fcshfj', width: 65, align: 'right', hidden: true },
+                { label: '分层审核附件', name: 'res_csgzfj', index: 'res_csgzfj', width: 65, align: 'right', hidden: true },
+                { label: '措施跟踪附件', name: 'res_fmeafj', index: 'res_fmeafj', width: 65, align: 'right', hidden: true },
+                { label: 'FMEA/CP附件', name: 'res_bzgxfj', index: 'completerate', width: 65, align: 'right', hidden: true },
+                { label: '标准更新附件', name: 'completerate', index: 'completerate', width: 65, align: 'right', hidden: true },
+                { label: '经验教训附件', name: 'completerate', index: 'completerate', width: 65, align: 'right', hidden: true },
+                { label: '未按进度完成附件', name: 'completerate', index: 'completerate', width: 65, align: 'right', hidden: true },
+                { label: '对策措施附件', name: 'completerate', index: 'completerate', width: 65, align: 'right', hidden: true },
+                
+            ],
+            viewrecords: true,
+            rowNum: 30,
+            rowList: [30, 50, 100, 500, 1000],
+            pager: "#gridPager",
+            sortname: 'res_cdate',
+            sortorder: 'desc',
+            rownumbers: true,
+            shrinkToFit: false,
+            gridview: true,
+            multiselect: false,
+            //cellattr: addCellAttr,
+            
+           // useColSpanStyle:true,
+            onSelectRow: function () {
+                SelectRowIndx = GetJqGridRowIndx("#" + this.id);
+            },
+            gridComplete: function () {
+                LoadViewList();
+                $("#" + this.id).jqGrid('setSelection', SelectRowIndx);
+            }
+        });
+        columnModelData("#gridTable");
+        //自应高度
+        $(window).resize(function () {
+            $("#gridTable").setGridHeight($(window).height() - 178);
+        });
+        //alert(11);
+        $("#gridTable").jqGrid('setGroupHeaders', {
+
+            //useColSpanStyle: true,
+            useColSpanStyle: false,
+            groupHeaders: [
+              { startColumnName: 'rapidstate', numberOfColumns: 5, titleText: '问题描述（G:完成，Y:进行，R:超期，W:待定，N:不适用）' },
+              { startColumnName: 'yzb', numberOfColumns: 9, titleText: '进度跟踪-问题退出要满足下列所有标准要求' },
+              { startColumnName: 'action', numberOfColumns: 4, titleText: '问题跟踪' },
+
+            ]
+        })
+
+        $("#gridTable").jqGrid('setGroupHeaders', {
+
+            //useColSpanStyle: true,
+            useColSpanStyle: false,
+            groupHeaders: [
+              { startColumnName: 'yzb', numberOfColumns: 1, titleText: '24H' },
+              { startColumnName: 'fx', numberOfColumns: 1, titleText: '3D' },
+              { startColumnName: 'cs', numberOfColumns: 1, titleText: '7D' },
+              { startColumnName: 'fcf', numberOfColumns: 2, titleText: '14D' },
+              { startColumnName: 'csgz', numberOfColumns: 1, titleText: '34D' },
+              { startColumnName: 'fmea', numberOfColumns: 2, titleText: '35D' },
+              { startColumnName: 'jyjx', numberOfColumns: 1, titleText: '40D' },
+
+            ]
+        })
+
+
+    }
+
+    function LengthSub(cellvalue, options, rowObject) {
+        if (cellvalue.length > 20) {
+            return cellvalue.substring(0, 20)+"....";
+        }
+        else {
+            return cellvalue;}
+    }
+
+    function LengthSubFj(cellvalue, options, rowObject) {
+        var temp = "";
+
+        //var address = String(data["NotCompleteReasonfj"]).replace('~', '../../../../')
+        //document.getElementById("uploadifyNotCompleteReasontxt").innerHTML = "<a href=\"" + address + "\" download=\"附件下载\">附件下载</a>";
+        //alert(rowObject.res_msfj);
+        if (rowObject.res_msfj != "" && rowObject.res_msfj != null && rowObject.res_msfj != undefined)
+        {
+            //alert(11);
+            temp = temp + "<a href=\"" + rowObject.res_msfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        if (cellvalue.length > 20) {
+            return temp+cellvalue.substring(0, 20) + "....";
+        }
+        else {
+            return temp+cellvalue;
+        }
+    }
+
+    function colorChange(cellvalue, options, rowObject) {
+        //alert(rowObject.res_msfj);
+        var IsMinus = String(cellvalue).indexOf("-");
+        
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        //if (IsMinus > 0);
+        //{
+        //    num = num * -1;
+        //}
+        if (IsOK > -1) {
+            //return "<font color='green'>" + cellvalue + "</font>";
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+                
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;}
+        
+        //return "<font color='red'>" + cellvalue + "</font>";
+    }
+    
+    function colorChangeyzb(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_yzbfj != "" && rowObject.res_yzbfj != null && rowObject.res_yzbfj != undefined) {
+           
+            temp = temp + "<a href=\"" + rowObject.res_yzbfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+           
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+        
+    }
+
+
+    function colorChangefx(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_fxfj != "" && rowObject.res_fxfj != null && rowObject.res_fxfj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_fxfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+    function colorChangecs(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_csfj != "" && rowObject.res_csfj != null && rowObject.res_csfj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_csfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function colorChangefcf(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_fcffj != "" && rowObject.res_fcffj != null && rowObject.res_fcffj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_fcffj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function colorChangefcsh(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_fcshfj != "" && rowObject.res_fcshfj != null && rowObject.res_fcshfj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_fcshfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function colorChangecsgz(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_csgzfj != "" && rowObject.res_csgzfj != null && rowObject.res_csgzfj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_csgzfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function colorChangefmea(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_fmeafj != "" && rowObject.res_fmeafj != null && rowObject.res_fmeafj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_fmeafj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function colorChangebzgx(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_bzgxfj != "" && rowObject.res_bzgxfj != null && rowObject.res_bzgxfj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_bzgxfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function colorChangejyjx(cellvalue, options, rowObject) {
+        var temp = "";
+        if (rowObject.res_jyjxfj != "" && rowObject.res_jyjxfj != null && rowObject.res_jyjxfj != undefined) {
+
+            temp = temp + "<a href=\"" + rowObject.res_jyjxfj.replace('~', '../../../../') + "\" download=\"附件下载\">" + "<img src=\"../../../../Content/Images/fileType/application_put.png\" />" + "</a>";
+        }
+        var IsMinus = String(cellvalue).indexOf("-");
+
+        var num = String(cellvalue).replace(/[^0-9]/ig, "");
+        var IsOK = String(cellvalue).indexOf("G");
+        var IsDoing = String(cellvalue).indexOf("Y");
+        var IsApprove = String(cellvalue).indexOf("W");
+        cellvalue = temp + cellvalue;
+        if (IsOK > -1) {
+
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Green; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        if (IsDoing > -1) {
+            if (IsMinus > 0) {
+
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: Yellow; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+            else {
+                cellvalue = cellvalue.replace("Y", "R");
+                return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: red; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+            }
+        }
+        if (IsApprove > -1) {
+            return "<div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div><div style='background-color: blue; color:black;text-align:center; width:50px; height:40px'>" + cellvalue + "</div><div style='background-color: white; color:black;text-align:center; width:50px; height:5px'></div>"
+        }
+        else {
+            return cellvalue;
+        }
+
+
+    }
+
+    function imageFormat(cellvalue, options, rowObject) {
+        //alert("成功？");
+        return "<a href='javascript:void(window.open(\"www.baidu.com\"));' class='entry'>" + cellvalue + "</a>";
+    }
+    function dateFormat(cellvalue, options, rowObject)
+    {
+        //alert(cellvalue);
+        if (cellvalue == "0001-01-01T00:00:00"||cellvalue==null) {
+            return "";
+        }
+        else {
+            return String(cellvalue).substring(0,10);
+        }
+    }
+    function StateChange(cellvalue, options, rowObject) {
+        //alert(cellvalue);
+        if (String(cellvalue) == "已完成")
+        { return "<div style='background-color: white; color:black;text-align:center; width:30px; height:3px'></div><div style='background-color: green; color:black;text-align:center; width:30px; height:30px'>G</div><div style='background-color: white; color:black;text-align:center; width:30px; height:3px'></div>" }
+        else if (String(cellvalue) == "进行中")
+        { return "<div style='background-color: white; color:black;text-align:center; width:30px; height:3px'></div><div style='background-color: yellow; color:black;text-align:center; width:30px; height:30px'>Y</div><div style='background-color: white; color:black;text-align:center; width:30px; height:3px'></div>" }
+        else if (String(cellvalue) == "回退")
+        { return "<div style='background-color: white; color:black;text-align:center; width:30px; height:3px'></div><div style='background-color: red; color:black;text-align:center; width:30px; height:30px'>Y</div><div style='background-color: white; color:black;text-align:center; width:30px; height:3px'></div>" }
+        else
+        {
+            return cellvalue;
+        }
+    }
+    //高级查询
+    var QueryParamJson = "";
+    function btn_query() {
+        QueryDialog("/Utility/QueryPage", "QueryPage", "查询过滤", 770, 395, function (iframe) {
+            top.frames[iframe].QueryClick(function (JsonData) {
+                QueryParamJson = JsonData;
+                $("#gridTable").jqGrid('setGridParam', {
+                    url: "@Url.Content("~/CommonModule/Rapid/GridPageListJson")?ParameterJson=" + escape(JsonData), page: 1
+                }).trigger('reloadGrid');
+            });
+        });
+    }
+    
+    //新增
+    function btn_add() {
+        var url = "/CommonModule/Rapid/FormNew"
+        openDialog(url, "Form", "新增", 650, 350, function (iframe) {
+            top.frames[iframe].AcceptClick()
+        });
+    }
+    //编辑
+    function btn_edit() {
+        var KeyValue = GetJqGridRowValue("#gridTable", "res_id");
+        if (IsChecked(KeyValue)) {
+            var url = "/CommonModule/Rapid/Form?KeyValue=" + KeyValue;
+            openDialog(url, "Form", "编辑", 650, 350, function (iframe) {
+                top.frames[iframe].AcceptClick();
+            });
+        }
+    }
+    
+    //我的代办方法
+    function Mydo() {
+        
+        $("#gridTable").jqGrid('setGridParam', {
+            url: "@Url.Content("~/CommonModule/Rapid/GridPageListJson")?MyTask=yes", page: 1
+                }).trigger('reloadGrid');
+    }
+    //明细
+    //function btn_detail() {
+    //    var KeyValue = GetJqGridRowValue("#gridTable", "res_id");
+    //    var gender = GetJqGridRowValue("#gridTable", "gender");
+    //    if (IsChecked(KeyValue)) {
+    //        var url = "/CommonModule/User/Detail?KeyValue=" + KeyValue + '&gender=' + escape(gender);
+    //        Dialog(url, "Detail", "用户明细", 750, 400);
+    //    }
+    //}
+    //删除
+    function btn_delete() {
+        var KeyValue = GetJqGridRowValue("#gridTable", "res_id");
+        
+            var delparm = 'KeyValue=' + KeyValue;
+            delConfig('/CommonModule/Rapid/Delete', delparm, KeyValue.split(",").length);
+        
+    }
+    
+    //导出Excel
+    function btn_derive() {
+        SetDeriveExcel("#gridTable", "快速反应");
+        openDialog("/CommonModule/ExcelImport/DeriveDialog", "DeriveDialog", "快速反应导出", 600, 300, function (iframe) {
+            top.frames[iframe].AcceptClick();
+        });
+    }
+    
+   
+    //刷新
+    function windowload() {
+        $("#gridTable").trigger("reloadGrid"); //重新载入 
+    }
+    /*视图begin=========================================================================*/
+    //切换到列表/视图
+    function SwitchListAndView() {
+        $('#grid_View').height($(window).height() - 78)
+        $('.switch-btns li').click(function () {
+            $('.switch-btns li').removeClass('selected');
+            $(this).addClass('selected');
+            if ($(this).attr('id') == 'li-switch-list') {
+                $(this).find('div').addClass('icon-btn-switch-list-select');
+                $("#li-switch-view").find('div').addClass('icon-btn-switch-view');
+                $("#li-switch-view").find('div').removeClass('icon-btn-switch-view-select');
+                $('#grid_List').show();
+                $('#grid_View').hide();
+            }
+            //显示视图
+            if ($(this).attr('id') == 'li-switch-view') {
+                $(this).find('div').addClass('icon-btn-switch-view-select');
+                $("#li-switch-list").find('div').addClass('icon-btn-switch-list');
+                $("#li-switch-list").find('div').removeClass('icon-btn-switch-list-select');
+                $('#grid_List').hide();
+                $('#grid_View').show();
+            }
+        })
+    }
+
+    //特定单元格添加超链接，可以实现附件下载，后台要把地址传过来，，怎样传待研究
+    function HyperLink() {
+        var data = $("#gridTable").jqGrid("getRowData");
+        for (var i = 0; i < data.length; i++)
+        {
+            data[i].res_ms;
+        }
+    }
+    //加载视图
+    function LoadViewList() {
+        var data = $("#gridTable").jqGrid("getRowData");
+        var html = "";
+        for (var i = 0; i < data.length; i++) {
+            var Genderimg = "Cardphoto";
+            if (data[i].gender == "男") {
+                Genderimg = "CardphotoA";
+            }
+            html += ' <div class="UserCard">';
+            html += '<div class="Cardhead">'
+            html += '     <div style="float: left">姓名：' + data[i].realname + '</div>'
+            html += '     <div style="float: right">NO：' + data[i].code + '</div>'
+            html += '</div>'
+            html += '<div>'
+            html += '    <div class="' + Genderimg + '"></div>'
+            html += '    <div class="CardInfo">'
+            html += '       部门：' + data[i].departmentname + '<br />'
+            if (!IsNullOrEmpty(data[i].duty)) {
+                html += '       职务：未填<br />'
+            } else {
+                html += '       职务：' + data[i].duty + '<br />'
+            }
+            html += '       电话：' + data[i].mobile + '<br />'
+            html += '   </div>'
+            html += '</div>'
+            html += '</div>'
+        }
+        $("#grid_View").html(html);
+    }
+    /*视图end=========================================================================*/
+</script>
+
+    <!--左边-->
+    
+    <!--中间-->
+    <div>
+        <div class="btnbartitle">
+            <div>
+                用户列表 <span id="CenterTitle"></span>
+            </div>
+        </div>
+        <!--工具栏-->
+        <div class="tools_bar" style="border-top: none; margin-bottom: 0px;">
+            <div class="PartialButton">
+                @Html.Partial("_PartialButton")
+            </div>
+
+        </div>
+        <!--列表-->
+        <div id="grid_List">
+            <div class="bottomline QueryArea" style="margin: 1px; margin-top: 0px; margin-bottom: 0px;">
+                <table border="0" class="form-find" style="height: 45px;">
+                    <tr>
+                        <th>关键字：
+                        </th>
+                        <td>
+                            <input id="keywords" type="text" class="txt" style="width: 200px" />
+                        </td>
+                        <td>
+                            <input id="btnSearch" type="button" class="btnSearch" value="搜 索" onclick="btn_Search()" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table id="gridTable"></table>
+            <div id="gridPager"></div>
+        </div>
+        <!--视图-->
+        <div>
+            
+    </div>
+

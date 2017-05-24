@@ -81,12 +81,16 @@ namespace LeaRun.Business
                 strSql.Append(" AND DepartmentId = @DepartmentId");
                 parameter.Add(DbFactory.CreateDbParameter("@DepartmentId", DepartmentId));
             }
-            if (!ManageProvider.Provider.Current().IsSystem)
-            {
-                strSql.Append(" AND ( UserId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
-                strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
-                strSql.Append(" ) )");
-            }
+            //if (!ManageProvider.Provider.Current().IsSystem)
+            //{
+            //    strSql.Append(" AND ( UserId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
+            //    strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
+            //    strSql.Append(" ) )");
+            //}
+            //所有用户都有看到所有的权限
+            //strSql.Append(" AND ( UserId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
+            //strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
+            //strSql.Append(" ) )");
             return Repository().FindTablePageBySql(strSql.ToString(), parameter.ToArray(), ref jqgridparam);
         }
         /// <summary>
@@ -172,12 +176,12 @@ namespace LeaRun.Business
                                                                             AND ou.UserId = @UserId
                                                                             AND ou.Category = 2
                             WHERE 1 = 1");
-            if (!ManageProvider.Provider.Current().IsSystem)
-            {
-                strSql.Append(" AND ( RoleId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
-                strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
-                strSql.Append(" ) )");
-            }
+            //if (!ManageProvider.Provider.Current().IsSystem)
+            //{
+            //    strSql.Append(" AND ( RoleId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
+            //    strSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
+            //    strSql.Append(" ) )");
+            //}
             strSql.Append(" AND r.CompanyId = @CompanyId");
             parameter.Add(DbFactory.CreateDbParameter("@UserId", UserId));
             parameter.Add(DbFactory.CreateDbParameter("@CompanyId", CompanyId));

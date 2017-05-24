@@ -1,0 +1,273 @@
+﻿@{
+    ViewBag.Title = "事物跟踪";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    .ui-jqgrid tr.jqgrow td {
+white-space: normal !important;
+height:auto;
+vertical-align:text-top;
+padding-top:2px;
+}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        GetGrid();
+        
+        //绑定键盘按下事件  
+        $(document).keypress(function (e) {
+            //回车键事件  
+            if (e.which == 13) {
+                $("#keywords").focus();
+                $("#keywords").select();
+                $("#btnSearch").click();
+            }
+        });
+    });
+ 
+    var CompanyId = "", DepartmentId = "", DepartmentName = "";
+
+    
+    Date.prototype.pattern = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1, //月份           
+            "d+": this.getDate(), //日           
+            "h+": this.getHours() % 12 == 0 ? 12 : this.getHours() % 12, //小时           
+            "H+": this.getHours(), //小时           
+            "m+": this.getMinutes(), //分           
+            "s+": this.getSeconds(), //秒           
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度           
+            "S": this.getMilliseconds() //毫秒           
+        };
+        var week = {
+            "0": "/u65e5",
+            "1": "/u4e00",
+            "2": "/u4e8c",
+            "3": "/u4e09",
+            "4": "/u56db",
+            "5": "/u4e94",
+            "6": "/u516d"
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        if (/(E+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "/u661f/u671f" : "/u5468") : "") + week[this.getDay() + ""]);
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+
+    //搜索
+    function btn_Search() {
+        var keywords = $("#keywords").val();
+        $("#gridTable").jqGrid('setGridParam', {
+            url: "@Url.Content("~/FYModule/ObjectTracking/GridPageListJson")?keywords=" + escape(keywords), page: 1
+        }).trigger('reloadGrid');
+    }
+
+
+    //加载表格
+    function GetGrid() {
+        var SelectRowIndx;
+        $("#gridTable").jqGrid({
+            url: "@Url.Content("~/FYModule/ObjectTracking/GridPageListJson")",
+            datatype: "json",
+            height: $(window).height() - 178,
+            autowidth: true,
+            colModel: [
+                { label: '主键', name: 'trackingid', index: 'trackingid', width: 80, align: 'left', hidden: true },
+                { label: '事物状态', name: 'objectstate', index: 'objectstate', width: 80, align: 'left' },
+                { label: '事物类别', name: 'objecttype', index: 'objecttype', width: 150, align: 'left' },
+                { label: '决议日期', name: 'decidedate', index: 'decidedate', width: 70, align: 'left', formatter: dateFormat },
+                { label: '事物描述', name: 'objectdescripe', index: 'objectdescripe', width: 150, align: 'center', formatter: LengthSub },
+                { label: '责任人', name: 'responseby', index: 'responseby', width: 100, align: 'center' },
+                { label: '完成期限', name: 'planfinishdate', index: 'planfinishdate', width: 70, align: 'left', formatter: dateFormat },
+                { label: '推迟', name: 'delaycount', index: 'delaycount', width: 65, align: 'center' },
+                { label: '推迟日期', name: 'delaydate', index: 'cs', width: 70, align: 'center', formatter: dateFormat },
+                { label: '实施进度', name: 'objectprogress', index: 'objectprogress', width: 65, align: 'center'  },
+                { label: '进度跟踪', name: 'trackingstates', index: 'trackingstates', width: 65, align: 'center'  },
+                { label: '跟踪人', name: 'trackingby', index: 'trackingby', width: 65, align: 'center' },
+
+                { label: '附件', name: 'attach', index: 'attach', width: 65, align: 'right', hidden: true },
+                
+
+            ],
+            viewrecords: true,
+            rowNum: 30,
+            rowList: [30, 50, 100, 500, 1000],
+            pager: "#gridPager",
+            sortname: 'trackingid',
+            sortorder: 'desc',
+            rownumbers: true,
+            shrinkToFit: false,
+            gridview: true,
+            multiselect: false,
+            //cellattr: addCellAttr,
+
+            // useColSpanStyle:true,
+            onSelectRow: function () {
+                SelectRowIndx = GetJqGridRowIndx("#" + this.id);
+            },
+            gridComplete: function () {
+                //LoadViewList();
+                $("#" + this.id).jqGrid('setSelection', SelectRowIndx);
+            }
+        });
+        columnModelData("#gridTable");
+        //自应高度
+        $(window).resize(function () {
+            $("#gridTable").setGridHeight($(window).height() - 178);
+        });
+
+    }
+
+
+    //高级查询
+    var QueryParamJson = "";
+    function btn_query() {
+        QueryDialog("/Utility/QueryPage", "QueryPage", "查询过滤", 770, 395, function (iframe) {
+            top.frames[iframe].QueryClick(function (JsonData) {
+                QueryParamJson = JsonData;
+                $("#gridTable").jqGrid('setGridParam', {
+                    url: "@Url.Content("~/FYModule/ObjectTracking/GridPageListJson")?ParameterJson=" + escape(JsonData), page: 1
+                }).trigger('reloadGrid');
+            });
+        });
+    }
+
+    //新增
+    function btn_add() {
+        var url = "/FYModule/ObjectTracking/Form"
+        openDialog(url, "Form", "新增", 650, 350, function (iframe) {
+            top.frames[iframe].AcceptClick()
+        });
+    }
+    //编辑
+    function btn_edit() {
+        var KeyValue = GetJqGridRowValue("#gridTable", "trackingid");
+        if (IsChecked(KeyValue)) {
+            var url = "/FYModule/ObjectTracking/FormEdit?KeyValue=" + KeyValue;
+            openDialog(url, "Form", "编辑", 650, 350, function (iframe) {
+                top.frames[iframe].AcceptClick();
+            });
+        }
+    }
+    //明细
+    //function btn_detail() {
+    //    var KeyValue = GetJqGridRowValue("#gridTable", "res_id");
+    //    var gender = GetJqGridRowValue("#gridTable", "gender");
+    //    if (IsChecked(KeyValue)) {
+    //        var url = "/CommonModule/User/Detail?KeyValue=" + KeyValue + '&gender=' + escape(gender);
+    //        Dialog(url, "Detail", "用户明细", 750, 400);
+    //    }
+    //}
+    //删除
+    function btn_delete() {
+        var KeyValue = GetJqGridRowValue("#gridTable", "trackingid");
+        if (IsDelData(KeyValue)) {
+            var delparm = 'KeyValue=' + KeyValue;
+            delConfig('/FYModule/ObjectTracking/Delete', delparm, KeyValue.split(",").length);
+        }
+    }
+
+    //导出Excel
+    function btn_derive() {
+        SetDeriveExcel("#gridTable", "快速反应");
+        openDialog("/CommonModule/ExcelImport/DeriveDialog", "DeriveDialog", "快速反应导出", 600, 300, function (iframe) {
+            top.frames[iframe].AcceptClick();
+        });
+    }
+
+
+    //刷新
+    function windowload() {
+        $("#gridTable").trigger("reloadGrid"); //重新载入 
+    }
+   
+
+    //特定单元格添加超链接，可以实现附件下载，后台要把地址传过来
+    function HyperLink() {
+        var data = $("#gridTable").jqGrid("getRowData");
+        for (var i = 0; i < data.length; i++) {
+            data[i].res_ms;
+        }
+    }
+
+    function dateFormat(cellvalue, options, rowObject) {
+        //alert(cellvalue);
+        if (cellvalue == "0001-01-01T00:00:00" || cellvalue == null) {
+            return "";
+        }
+        else {
+            return String(cellvalue).substring(0, 10);
+        }
+    }
+
+    //根据日期判断，文本显示红色
+    function LengthSub(cellvalue, options, rowObject) {
+        var DateNow = new Date();//取今天的日期
+        //alert(rowObject.decidedate);
+        var DecideDate = new Date(Date.parse(rowObject.decidedate));
+
+        if (cellvalue.length > 20) {
+            cellvalue = cellvalue.substring(0, 20) + "....";
+        }
+        
+
+        if (DateNow.pattern("yyyy-MM-dd") > DecideDate.pattern("yyyy-MM-dd"))
+        {
+            cellvalue = "<font color=\"red\">" + cellvalue + "</font>";
+        }
+
+        return cellvalue;
+    }
+
+
+    
+</script>
+
+    <!--左边-->
+    
+    <!--中间-->
+    <div>
+        <div class="btnbartitle">
+            <div>
+                用户列表 <span id="CenterTitle"></span>
+            </div>
+        </div>
+        <!--工具栏-->
+        <div class="tools_bar" style="border-top: none; margin-bottom: 0px;">
+            <div class="PartialButton">
+                @Html.Partial("_PartialButton")
+            </div>
+
+        </div>
+        <!--列表-->
+        <div id="grid_List">
+            <div class="bottomline QueryArea" style="margin: 1px; margin-top: 0px; margin-bottom: 0px;">
+                <table border="0" class="form-find" style="height: 45px;">
+                    <tr>
+                        <th>关键字：
+                        </th>
+                        <td>
+                            <input id="keywords" type="text" class="txt" style="width: 200px" />
+                        </td>
+                        <td>
+                            <input id="btnSearch" type="button" class="btnSearch" value="搜 索" onclick="btn_Search()" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table id="gridTable"></table>
+            <div id="gridPager"></div>
+        </div>
+        <!--视图-->
+        
+    </div>
+

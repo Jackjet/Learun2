@@ -1,0 +1,372 @@
+﻿@{
+    ViewBag.Title = "QSB》QSB";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    
+    
+}
+<!--上传文件组件start-->
+<link href="~/Content/Scripts/uploadify/uploadify.css" rel="stylesheet" />
+<script src="~/Content/Scripts/uploadify/jquery.uploadify.js"></script>
+<script type="text/javascript">
+    $(function () {
+        BindDepartment();
+        
+        
+        
+    })
+   
+    //得到一个对象实体
+    function InitControl() {
+       
+        
+        
+        
+
+    }
+    //保存事件
+    function AcceptClick() {
+        if (!CheckDataValid('#form1')) {
+            return false;
+        }
+        Loading(true, "正在提交数据...");
+        window.setTimeout(function () {
+            var postData = GetWebControls("#form1");
+            postData["BuildFormJson"] = JSON.stringify(GetWebControls("#CustomAttribute"));
+            AjaxJson("/CommonModule/Rapid/SubmitTestTableForm?KeyValue=" + GetQuery('KeyValue'), postData, function (data) {
+                tipDialog(data.Message, 3, data.Code);
+                top.frames[tabiframeId()].windowload();
+                closeDialog();
+            });
+        }, 200);
+    }
+
+    //人员下拉框
+    function BindDepartment() {
+        //alert(11);
+        $("#res_cpeo").html("");
+        $("#res_cpeo").append("<option value=''>==请选择==</option>");
+        AjaxJson("/CommonModule/Rapid/ListJson", {  }, function (DataJson) {
+            $.each(DataJson, function (i) {
+                $("#res_cpeo").append($("<option></option>").val(DataJson[i].code).html(DataJson[i].RealName));
+            });
+        })
+        $("#res_kf").html("");
+        $("#res_kf").append("<option value=''>==请选择==</option>");
+        AjaxJson("/CommonModule/Rapid/CustomerJson", {}, function (DataJson) {
+            $.each(DataJson, function (i) {
+                $("#res_kf").append($("<option></option>").val(DataJson[i].fy_cus_name).html(DataJson[i].fy_cus_name));
+            });
+        })
+    }
+
+
+
+    
+
+</script>
+
+
+<style>
+    input { background:#E0FFFF;}
+    textarea {background:#E0FFFF;}
+    select {background:#E0FFFF;}
+</style>
+
+
+<form id="form1">
+    <div id="message" style="display: none; padding: 1px; padding-bottom: 0px;"></div>
+    <div class="bd" style="border-bottom: none; margin: 1px;">
+        <div class="tipstitle_title settingtable bold bd todayInfoPanelTab rightPanelTitle_normal">
+            <div class="tab_list_top" style="position: absolute">
+                <div id="Tabbasic" class="tab_list bd actived" onclick="Tabchange('basic')">问题描述</div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="ScrollBar" style="margin: 1px; overflow: hidden;">
+        <!--基本信息-->
+        <div id="basic" class="tabPanel">
+            <table class="form">
+                
+                 <tr>
+                    <th class="formTitle">客户：</th>
+                    <td class="formValue">
+                        <select id="res_kf" class="txtselect">
+                            
+                        </select>
+                    </td>
+                    <th class="formTitle">投诉级别：</th>
+                    <td class="formValue">
+                        <select id="res_jb" class="txtselect">
+                            <option value="A级">A级</option>
+                            <option value="B级">B级</option>
+                            <option value="C级">C级</option>
+                            <option value="D级">D级</option>
+                            <option value="E级">E级</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">事发地：</th>
+                    <td class="formValue">
+                         <input id="res_dd" type="text" class="txt" />
+                    </td>
+                    <th class="formTitle">重复发生：</th>
+                    <td class="formValue">
+                         <select id="cd" class="txtselect">
+                            <option value="是">是</option>
+                            <option value="否">否</option>
+                           
+                        </select>
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="formTitle">产品名称：</th>
+                    <td class="formValue">
+                         <input id="res_mc" type="text" class="txt" />
+                    </td>
+                     <th class="formTitle">问题类别：</th>
+                    <td class="formValue">
+                         <select id="res_ok" class="txtselect">
+                            <option value="外部">外部</option>
+                            <option value="内部">内部</option>
+                           
+                        </select>
+                    </td>
+                  </tr>
+                 <tr>
+                    <th class="formTitle">负责人：</th>
+                    <td class="formValue">
+                         
+                         <select id="res_cpeo" class="txtselect"> </select>
+                    </td>
+                     <th class="formTitle">重要程度：</th>
+                    <td class="formValue">
+                         <select id="res_cd" class="txtselect">
+                            <option value="I级">I级</option>
+                            <option value="II级">II级</option>
+                           
+                        </select>
+                    </td>
+                  </tr>
+                <tr>
+                    <th class="formTitle">发生日期：</th>
+                    <td class="formValue">
+                          <input id="res_cdate" type="text" class="txt Wdate" onfocus="WdatePicker({maxDate:'%y-%M-%d'})" style="background:#E0FFFF" />
+                    </td>
+                     <th class="formTitle">下次汇报日期：</th>
+                    <td class="formValue">
+                         
+                            <input id="res_ndate" type="text" class="txt Wdate" onfocus="WdatePicker()" style="background:#E0FFFF" />
+                           
+                        
+                    </td>
+                   
+                  </tr>
+                <tr>
+                     <th class="formTitle">问题内容描述：</th>
+                    <td class="formValue" colspan="2">
+                          <textarea  id="res_ms"  class="txt" style="width:320px;height:80px;" /></textarea>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                    <input id="uploadify" name="uploadify" type="file" style="display:none" />
+                                    </td>
+                                <td>
+                        <label id="tt" style="display:none" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    
+                   @* <input id="download" /></td>*@
+                </tr>
+                
+               
+            </table>
+        </div>
+
+        
+    </div>
+    <div id="work"  style="display: none;">
+            <table class="form" style="table-layout:fixed;">
+               <tr>
+                    <th class="formTitle" style="width:10%;word-wrap:break-word;word-break:break-all;">遏制表</br>（24H）：</th>
+                    <td class="formValue" style="width:30%">
+                        <b>操作日期：</b> <input id="res_yzbdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态:</b><select id="res_yzbnode" class="txtselect">
+                            <option value="">请选择</option>
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> 
+                        <table>
+                            <tr>
+                                <td>
+                        <input id="uploadifyyzb" name="uploadify" type="file" />
+                                    <label id="uploadifyyzbtxt" style="display:none" />
+                                    </td>
+                                </tr>
+                            </table>
+                        
+                    </td>
+                   <td class="formValue" style="width:10%" id="res_yzbstate">状态：<input id="res_yzb" type="text" class="txt" /></td>
+                    <th class="formTitle" style="width:10%">根本原因</br>分析：</th>
+                    <td class="formValue" style="width:30%">
+                        <b>操作日期：</b> <input id="res_fxdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>根本原因分析：</b>
+                        <input id="res_fxnode" type="text" class="txt" />
+                        <input id="uploadifyfx" name="uploadify" type="file" /><label id="uploadifyfxtxt" style="display:none" />
+                    </td>
+                   <td class="formValue" style="width:10%" id="res_fxstate">状态：<input id="res_fx" type="text" class="txt" /></td>
+                </tr>
+               
+                <tr>
+                    <th class="formTitle">纠正措施</br>（7D)：</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_csdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>纠正措施：</b> 
+                        <input id="res_csnode" type="text" class="txt" />
+                         <input id="uploadifycs" name="uploadify" type="file" /><label id="uploadifycstxt" style="display:none" />
+                        
+                    </td>
+                    <td class="formValue" id="res_csstate">状态：<input id="res_cs" type="text" class="txt" /></td>
+                    <th class="formTitle">防错法</br>（14D)：</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_fcfdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态：</b> <select id="res_fcfnode" class="txtselect">
+                            <option value="">请选择</option>
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> <input id="uploadifyfcf" name="uploadify" type="file" /><label id="uploadifyfcftxt" style="display:none" />
+                    </td>
+                    <td class="formValue" id="res_fcfstate">状态：<input id="res_fcf" type="text" class="txt" /></td>
+                </tr>
+
+              
+              <tr>
+                    <th class="formTitle">分层审核</br>（14D):</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_fcshdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态：</b> <select id="res_fcshnode" class="txtselect">
+                            <option value="">请选择</option>
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> <input id="uploadifyfcsh" name="uploadify" type="file" /><label id="uploadifyfcshtxt" style="display:none" />
+                        
+                    </td>
+                  <td class="formValue" id="res_fcshstate">状态：<input id="res_fcsh" type="text" class="txt" /></td>
+                    <th class="formTitle">措施跟踪</br>（34D):</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_csgzdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态：</b> <select id="res_csgznode" class="txtselect">
+                            <option value="">请选择</option>
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> <input id="uploadifycsgz" name="uploadify" type="file" /><label id="uploadifycsgztxt" style="display:none" />
+                    </td>
+                  <td class="formValue" id="res_csgzstate">状态：<input id="res_csgz" type="text" class="txt" /></td>
+                </tr>
+
+              
+              <tr>
+                    <th class="formTitle">FMEA/CP<br/>更新日期</br>（35D):</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_fmeadt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态：</b> <select id="res_fmeanode" class="txtselect">
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> <input id="uploadifyfmea" name="uploadify" type="file" /><label id="uploadifyfmeatxt" style="display:none" />
+                        
+                    </td>
+                  <td class="formValue" id="res_fmeastate">状态：<input id="res_fmea" type="text" class="txt" /></td>
+                    <th class="formTitle">标准更新</br>（35D):</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_bzgxdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态：</b> <select id="res_bzgxnode" class="txtselect">
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> <input id="uploadifybzgx" name="uploadify" type="file" /><label id="uploadifybzgxtxt" style="display:none" />
+                    </td>
+                  <td class="formValue" id="res_bzgxstate">状态：<input id="res_bzgx" type="text" class="txt" /></td>
+                </tr>
+                <tr>
+                    <th class="formTitle">经验教训</br>（40D):</th>
+                    <td class="formValue">
+                        <b>操作日期：</b> <input id="res_jyjxdt" type="text" class="txt Wdate" onfocus="WdatePicker()" /> <b>节点状态：</b> <select id="res_jyjxnode" class="txtselect">
+                            <option value="">请选择</option>
+                            <option value="N">N</option>
+                            <option value="G">G</option>
+                           
+                        </select> <input id="uploadifyjyjx" name="uploadify" type="file" /><label id="uploadifyjyjxtxt" style="display:none" />
+                        
+                    </td>
+                    <td class="formValue" id="res_jyjxstate">状态：<input id="res_jyjx" type="text" class="txt" /></td>
+                    <th class="formTitle"></th>
+                    <td class="formValue">
+                       
+                    </td>
+                    <td class="formValue"></td>
+                </tr>
+               
+            </table>
+        </div>
+        <!--问题跟踪-->
+        <div id="problem"  style="display: none;">
+            <table class="form">
+               <tr>
+                    <th class="formTitle">未按进度完成原因：</th>
+                    <td class="formValue">
+                        <input id="NotCompleteReason" type="text" class="txt" />
+
+                       <input id="uploadifyNotCompleteReason" name="uploadify" type="file" />
+                        <label id="uploadifyNotCompleteReasontxt" style="display:none" />
+                    </td>
+                    <th class="formTitle">对策措施：</th>
+                    <td class="formValue">
+                         <input id="Action" type="text" class="txt" />
+                       <input id="uploadifyAction" name="uploadify" type="file" />
+                      <label id="uploadifyActiontxt" style="display:none" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">计划完成日期：</th>
+                    <td class="formValue">
+                        <input id="PlanTime" type="text" class="txt Wdate" onfocus="WdatePicker()" />
+                        
+                    </td>
+                    <th class="formTitle">实际完成日期：</th>
+                    <td class="formValue">
+                        <input id="RealTime" type="text" class="txt Wdate" onfocus="WdatePicker()" />
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">客户关闭时间：</th>
+                    <td class="formValue">
+                        <input id="CustomerTime" type="text" class="txt Wdate" onfocus="WdatePicker()" />
+                        
+                    </td>
+                    <th class="formTitle"></th>
+                    <td class="formValue">
+                        
+                    </td>
+                </tr>
+               <tr> <th class="formTitle" style="display:none">是否发过邮件：</th>
+                    <td class="formValue" style="display:none">
+                         <input id="IsEmail" type="text" class="txt" />
+                       <th class="formTitle" style="display:none">单据状态：</th>
+                    <td class="formValue" style="display:none">
+                         <input id="RapidState" type="text" class="txt" />
+                    </td></tr>
+              
+
+              
+
+
+              
+
+
+            </table>
+        </div>
+</form>

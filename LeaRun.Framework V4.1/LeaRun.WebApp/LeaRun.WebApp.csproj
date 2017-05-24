@@ -158,6 +158,7 @@
     <Compile Include="Areas\ExampleModule\Controllers\TestTableController.cs" />
     <Compile Include="Areas\ExampleModule\ExampleModuleAreaRegistration.cs" />
     <Compile Include="Areas\FYModule\Controllers\ObjectTrackingController.cs" />
+    <Compile Include="Areas\FYModule\Controllers\RapidUserController.cs" />
     <Compile Include="Areas\FYModule\FYModuleAreaRegistration.cs" />
     <Compile Include="Areas\Thirdparty\Controllers\CkediterController.cs" />
     <Compile Include="Areas\Thirdparty\Controllers\DeclarationController.cs" />
@@ -8627,6 +8628,7 @@
     <Content Include="Areas\FYModule\Views\ObjectTracking\Form.cshtml" />
     <Content Include="Areas\CommonModule\Views\Rapid\FormNew.cshtml" />
     <Content Include="Areas\FYModule\Views\ObjectTracking\FormEdit.cshtml" />
+    <Content Include="Areas\FYModule\Views\RapidUser\Index.cshtml" />
     <None Include="Properties\PublishProfiles\LR-FDMS.pubxml" />
     <Content Include="Views\Home\SkinIndex.cshtml" />
     <Content Include="Views\Login\Default.cshtml" />

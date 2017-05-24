@@ -1,0 +1,299 @@
+--------[ 鲁大师 ]--------------------------------------------------------------------------------
+
+  软件:             鲁大师 5.15.16.1130
+  时间:             2016-11-13 11:52:43
+  网站:             http://www.ludashi.com
+
+--------[ 概览 ]----------------------------------------------------------------------------------
+
+  电脑型号            戴尔 Inspiron 7460 笔记本电脑
+  操作系统            Windows 10 64位 ( DirectX 12 )
+
+  处理器              英特尔 Core i5-7200U @ 2.50GHz 双核
+  主板                戴尔 0DCHVF ( 英特尔 7th Generation Processor Family/DRAM Registers - 5904 )
+  显卡                Nvidia GeForce 940MX ( 2 GB )
+  内存                4 GB ( 镁光 DDR4 2400MHz )
+  主硬盘              闪迪 X400 M.2 2280 128GB ( 128 GB / 固态硬盘 )
+  显示器              LG LGD053C ( 14 英寸  )
+  声卡                瑞昱  @ 英特尔 High Definition Audio 控制器
+  网卡                英特尔 Dual Band Wireless-AC 3165
+
+--------[ 主板 ]----------------------------------------------------------------------------------
+
+  主板型号            戴尔 0DCHVF
+  芯片组              英特尔 7th Generation Processor Family/DRAM Registers - 5904
+  BIOS                1.0.2  /  制造日期: 2016年08月12日
+
+
+--------[ 处理器 ]--------------------------------------------------------------------------------
+
+  处理器              英特尔 Core i5-7200U @ 2.50GHz 双核
+  速度                2.71 GHz (100 MHz x 27.0)
+  处理器数量          核心数: 2 / 线程数: 4
+  插槽/插座           U3E1
+  一级数据缓存        2 x 32 KB, 8-Way, 64 byte lines
+  一级代码缓存        2 x 32 KB, 8-Way, 64 byte lines
+  二级缓存            2 x 256 KB, 4-Way, 64 byte lines
+  三级缓存            3 MB, 12-Way, 64 byte lines
+  特征                MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, HTT, EM64T, EIST, Turbo Boost
+
+--------[ 硬盘 ]----------------------------------------------------------------------------------
+
+  产品                东芝  MQ01ABF050
+  大小                500 GB
+  转速                5400 转/分
+  缓存                8 MB
+  硬盘已使用          共 20 次，累计 13 小时
+  固件                AM0P2D  
+  接口                SATA III
+  数据传输率          600.00 MB/秒
+  特征                S.M.A.R.T,  APM,  48-bit LBA,  NCQ
+
+  产品                闪迪  X400 M.2 2280 128GB (固态硬盘)
+  大小                128 GB
+  硬盘已使用          共 21 次，累计 12 小时
+  固件                X4130012
+  接口                SATA III
+  数据传输率          600 MB/秒
+  特征                S.M.A.R.T,  APM,  48-bit LBA,  NCQ
+
+--------[ 内存 ]----------------------------------------------------------------------------------
+
+  DIMM2               镁光 DDR4 2400MHz 4GB
+  制造日期            2016 年 07月
+  型号                2C 4ATF51264HZ-2G3B1
+  序列号              13469B0F
+  厂商                Micron
+  模块位宽:           64 Bits
+  模块电压:           SSTL 1.2V
+
+--------[ 显卡 ]----------------------------------------------------------------------------------
+
+  显卡                英特尔 HD Graphics 620
+  显存                128 MB
+  制造商              戴尔
+  制造商              Intel
+  驱动版本            21.20.16.4492
+  驱动日期            2016年07月19日
+
+  主显卡              Nvidia GeForce 940MX
+  显存                2 GB
+  制造商              Nvidia
+  驱动版本            10.18.13.6249
+  驱动日期            2016年05月01日
+
+--------[ 显示器 ]--------------------------------------------------------------------------------
+
+  产品                LG LGD053C
+  厂商                LG
+  固件日期            2016 年
+  屏幕尺寸            14 英寸 (31 厘米 x 17 厘米)
+  显示比例            宽屏 16 : 9
+  分辨率              1920 x 1080 32 位真彩色
+  Gamma               2.20
+  最大分辨率          1920 x 1080
+
+--------[ 其他设备 ]------------------------------------------------------------------------------
+
+
+  无线网卡            英特尔 Dual Band Wireless-AC 3165
+
+  网卡                瑞昱 RTL8168/8111/8112 Gigabit Ethernet Controller
+  制造商              戴尔
+
+  声卡                瑞昱  @ 英特尔 High Definition Audio 控制器
+
+  键盘                PS/2 标准键盘
+  鼠标                PS/2 兼容鼠标
+  鼠标                HID-compliant 鼠标
+
+  摄像头              Integrated Webcam
+
+--------[ PCI设备 ]-------------------------------------------------------------------------------
+
+  设备                7th Generation Processor Family Host Bridge/DRAM Registers - 5904
+  设备ID              5904
+  制造商              Intel
+  制造商ID            8086
+  类别                Bridge / PCI to HOST
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                HD Graphics 620
+  设备ID              5916
+  制造商              Intel
+  制造商ID            8086
+  类别                Display / VGA
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                Dynamic Platform and Thermal Framework Processor Participant
+  设备ID              1903
+  制造商              Intel
+  制造商ID            8086
+  类别                Data Aquisition & Signal Processing / Other
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                USB 3.0 可扩展主机控制器 - 1.0 (Microsoft)
+  设备ID              9D2F
+  制造商              Intel
+  制造商ID            8086
+  类别                Serial / USB (UHCI)
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                100 Series Chipset Family Thermal subsystem - 9D31
+  设备ID              9D31
+  制造商              Intel
+  制造商ID            8086
+  类别                Data Aquisition & Signal Processing / Other
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                Serial IO I2C Host Controller - 9D60
+  设备ID              9D60
+  制造商              Intel
+  制造商ID            8086
+  类别                Data Aquisition & Signal Processing / Other
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                Serial IO I2C Host Controller - 9D61
+  设备ID              9D61
+  制造商              Intel
+  制造商ID            8086
+  类别                Data Aquisition & Signal Processing / Other
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                Management Engine Interface
+  设备ID              9D3A
+  制造商              Intel
+  制造商ID            8086
+  类别                Simple Communication / Other
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                6th Generation Core Processor Family Platform I/O SATA AHCI Controller
+  设备ID              9D03
+  制造商              Intel
+  制造商ID            8086
+  类别                Storage / Serial ATA (AHCI 1.0)
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                100 Series Chipset Family PCI Express Root Port #1 - 9D10
+  设备ID              9D10
+  制造商              Intel
+  制造商ID            8086
+  类别                Bridge / PCI to PCI
+  子系统ID            00000000
+
+  设备                100 Series Chipset Family PCI Express Root Port #5 - 9D14
+  设备ID              9D14
+  制造商              Intel
+  制造商ID            8086
+  类别                Bridge / PCI to PCI
+  子系统ID            00000000
+
+  设备                100 Series Chipset Family PCI Express Root Port #6 - 9D15
+  设备ID              9D15
+  制造商              Intel
+  制造商ID            8086
+  类别                Bridge / PCI to PCI
+  子系统ID            00000000
+
+  设备                Mobile 6th Generation Intel Processor Family I/O SCC: eMMC - 9D2B
+  设备ID              9D2B
+  制造商              Intel
+  制造商ID            8086
+  类别                System / SD Host Controller (With DMA)
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                Mobile 6th Generation Intel Processor Family I/O SCC: SDCard - 9D2D
+  设备ID              9D2D
+  制造商              Intel
+  制造商ID            8086
+  类别                System / SD Host Controller (With DMA)
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                PCI 标准 ISA 桥
+  设备ID              9D58
+  制造商              Intel
+  制造商ID            8086
+  类别                Bridge / PCI to ISA
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                100 Series Chipset Family PMC - 9D21
+  设备ID              9D21
+  制造商              Intel
+  制造商ID            8086
+  类别                Memory / Other
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                High Definition Audio 控制器
+  设备ID              9D71
+  制造商              Intel
+  制造商ID            8086
+  类别                Multimedia / Hi-definition Audio
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                100 Series Chipset Family SMBus - 9D23
+  设备ID              9D23
+  制造商              Intel
+  制造商ID            8086
+  类别                Serial / SMBus Controller
+  子系统制造商        Dell
+  子系统ID            07811028
+
+  设备                Dual Band Wireless-AC 3165
+  设备ID              3165
+  制造商              Intel
+  制造商ID            8086
+  类别                Network / Other
+  子系统制造商        Intel
+  子系统ID            44108086
+
+  设备                RTL8168/8111/8112 Gigabit Ethernet Controller
+  设备ID              8168
+  制造商              Realtek
+  制造商ID            10EC
+  类别                Network / Ethernet
+  子系统制造商        Dell
+  子系统ID            07811028
+
+--------[ USB设备 ]-------------------------------------------------------------------------------
+
+  制造商ID            1BCF
+  产品ID              2C00
+  类别                239 / 2 / 1
+  设备                 
+  版本                USB 2.0
+
+  制造商ID            0BDA
+  产品ID              0129
+  类别                255 / 255 / 255
+  设备                 
+  版本                USB 2.0
+
+  制造商ID            8087
+  产品ID              0A2A
+  类别                224 / 1 / 1
+  设备                 
+  版本                USB 2.0
+
+--------[ 传感器 ]--------------------------------------------------------------------------------
+
+  CPU温度             42℃
+  CPU核心             43℃
+  CPU封装             43℃
+  主板                25℃
+  显卡                39℃
+  硬盘温度            29℃
+

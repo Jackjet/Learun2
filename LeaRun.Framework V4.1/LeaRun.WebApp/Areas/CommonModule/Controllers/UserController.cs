@@ -189,7 +189,7 @@ namespace LeaRun.WebApp.Areas.CommonModule.Controllers
         /// ÓÃ»§½ÇÉ«
         /// </summary>
         /// <returns></returns>
-        [ManagerPermission(PermissionMode.Enforce)]
+        //[ManagerPermission(PermissionMode.Enforce)]
         public ActionResult UserRole()
         {
             return View();

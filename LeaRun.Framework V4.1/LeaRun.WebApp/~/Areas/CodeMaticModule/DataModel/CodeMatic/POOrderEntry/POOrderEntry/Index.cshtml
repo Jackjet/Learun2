@@ -1,0 +1,72 @@
+@{
+    ViewBag.Title = "订单分录";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        GetGrid();
+    })
+    //加载表格
+    function GetGrid() {
+        $("#gridTable").jqGrid({
+        url: "@Url.Content("~/CommonModule/POOrderEntry/GridPageJson")",
+        datatype: "json",
+        height: $(window).height() - 149,
+        autowidth: true,
+        colModel: [
+                { label: '订单分录主键', name: 'POOrderEntryId', index: 'POOrderEntryId', width: 0, align: 'left',sortable: true  },
+                { label: '订单主键', name: 'POOrderId', index: 'POOrderId', width: 0, align: 'left',sortable: true  },
+                { label: '批号', name: 'BatchNo', index: 'BatchNo', width: 0, align: 'left',sortable: true  },
+                { label: '物料主键', name: 'ItemId', index: 'ItemId', width: 0, align: 'left',sortable: true  },
+                { label: '物料代码', name: 'ItemCode', index: 'ItemCode', width: 0, align: 'left',sortable: true  },
+                { label: '物料名称', name: 'ItemName', index: 'ItemName', width: 0, align: 'left',sortable: true  },
+                { label: '物料型号', name: 'ItemModel', index: 'ItemModel', width: 0, align: 'left',sortable: true  },
+                { label: '单位主键', name: 'UnitId', index: 'UnitId', width: 0, align: 'left',sortable: true  },
+                { label: '数量', name: 'Qty', index: 'Qty', width: 0, align: 'left',sortable: true  },
+                { label: '单价', name: 'Price', index: 'Price', width: 0, align: 'left',sortable: true  },
+                { label: '金额', name: 'PriceAmount', index: 'PriceAmount', width: 0, align: 'left',sortable: true  },
+                { label: '含税单价', name: 'PlusPrice', index: 'PlusPrice', width: 0, align: 'left',sortable: true  },
+                { label: '含税金额', name: 'PlusPriceAmount', index: 'PlusPriceAmount', width: 0, align: 'left',sortable: true  },
+                { label: '税率(%)', name: 'CESS', index: 'CESS', width: 0, align: 'left',sortable: true  },
+                { label: '税额', name: 'CESSAmount', index: 'CESSAmount', width: 0, align: 'left',sortable: true  },
+                { label: '说明', name: 'Description', index: 'Description', width: 0, align: 'left',sortable: true  },
+                { label: '排序码', name: 'SortCode', index: 'SortCode', width: 0, align: 'left',sortable: true  },
+                { label: '删除标记', name: 'DeleteMark', index: 'DeleteMark', width: 0, align: 'left',sortable: true  },
+                { label: '创建时间', name: 'CreateDate', index: 'CreateDate', width: 0, align: 'left',sortable: true  },
+                { label: '创建用户主键', name: 'CreateUserId', index: 'CreateUserId', width: 0, align: 'left',sortable: true  },
+                { label: '创建用户', name: 'CreateUserName', index: 'CreateUserName', width: 0, align: 'left',sortable: true  },
+                { label: '修改时间', name: 'ModifyDate', index: 'ModifyDate', width: 0, align: 'left',sortable: true  },
+                { label: '修改用户主键', name: 'ModifyUserId', index: 'ModifyUserId', width: 0, align: 'left',sortable: true  },
+                { label: '修改用户', name: 'ModifyUserName', index: 'ModifyUserName', width: 0, align: 'left',sortable: true  },
+        ],
+        pager: "#gridPager",
+        sortname: '',
+        sortorder: 'desc',
+        rownumbers: true,
+        shrinkToFit: false,
+        gridview: true,
+    });
+}
+    //刷新
+    function windowload() {
+        $("#gridTable").trigger("reloadGrid"); //重新载入
+        
+    }
+</script>
+<div class="leftline rightline QueryArea" style="margin: 1px; margin-top: 0px; margin-bottom: 0px;">
+    <table border="0" class="form-find" style="height: 45px;">
+        <tr>
+            <th>关键字：</th>
+            <td>
+                <input id="keywords" type="text" class="txt" style="width: 200px" />
+            </td>
+            <td>
+                <input id="btnSearch" type="button" class="btnSearch" value="搜 索" onclick="btn_Search()" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="topline rightline" style="margin: 1px; margin-top: -1px;">
+    <table id="gridTable"></table>
+    <div id="gridPager"></div>
+</div>

@@ -1,0 +1,173 @@
+@{
+    ViewBag.Title = "订单主表》明细页面";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        InitControl();
+    })
+    //得到一个对象实体
+    function InitControl() {
+        if (!!GetQuery('KeyValue')) {
+            AjaxJson("/CommonModule/POOrder/SetForm", { KeyValue: GetQuery('KeyValue') }, function (data) {
+                SetWebControls(data);
+            });
+        }
+    }
+</script>
+<form id="form1" style="margin: 1px">
+    <table class="form">
+        <tr>
+            <th class='formTitle'>订单主键：</th>
+            <td class='formValue'>
+                <label id="POOrderId" />
+            </td>
+            <th class='formTitle'>父级主键：</th>
+            <td class='formValue'>
+                <label id="ParentId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>订单单号：</th>
+            <td class='formValue'>
+                <label id="BillNo" />
+            </td>
+            <th class='formTitle'>订单日期：</th>
+            <td class='formValue'>
+                <label id="BillDate" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>订单方式：</th>
+            <td class='formValue'>
+                <label id="Method" />
+            </td>
+            <th class='formTitle'>结算方式：</th>
+            <td class='formValue'>
+                <label id="Clearing" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>结算日期：</th>
+            <td class='formValue'>
+                <label id="ClearingTime" />
+            </td>
+            <th class='formTitle'>币别：</th>
+            <td class='formValue'>
+                <label id="Currency" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>汇率：</th>
+            <td class='formValue'>
+                <label id="ExchangeRate" />
+            </td>
+            <th class='formTitle'>供应商：</th>
+            <td class='formValue'>
+                <label id="SupplierId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>交货地点：</th>
+            <td class='formValue'>
+                <label id="FetchAdd" />
+            </td>
+            <th class='formTitle'>采购员主键：</th>
+            <td class='formValue'>
+                <label id="SalesmanId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>采购员：</th>
+            <td class='formValue'>
+                <label id="Salesman" />
+            </td>
+            <th class='formTitle'>录入类型：0-PC手工录入,1-外部引入,2-PDA录入,3-手机端录入,4-其它录入：</th>
+            <td class='formValue'>
+                <label id="POOrderType" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>关闭：0-正常，1-作废：</th>
+            <td class='formValue'>
+                <label id="Cancellation" />
+            </td>
+            <th class='formTitle'>制单部门主键：</th>
+            <td class='formValue'>
+                <label id="CreateDepartmentId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>制单部门：</th>
+            <td class='formValue'>
+                <label id="CreateDepartmentName" />
+            </td>
+            <th class='formTitle'>制单人主键：</th>
+            <td class='formValue'>
+                <label id="CreateUserId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>制单人：</th>
+            <td class='formValue'>
+                <label id="CreateUserName" />
+            </td>
+            <th class='formTitle'>制单时间：</th>
+            <td class='formValue'>
+                <label id="CreateDate" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>提交订单；0-未提交,1-已提交：</th>
+            <td class='formValue'>
+                <label id="IsSubmit" />
+            </td>
+            <th class='formTitle'>删除标记：</th>
+            <td class='formValue'>
+                <label id="DeleteMark" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>变更部门主键：</th>
+            <td class='formValue'>
+                <label id="ModifyDepartmentId" />
+            </td>
+            <th class='formTitle'>变更部门：</th>
+            <td class='formValue'>
+                <label id="ModifyDepartmentName" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>变更人主键：</th>
+            <td class='formValue'>
+                <label id="ModifyUserId" />
+            </td>
+            <th class='formTitle'>变更人：</th>
+            <td class='formValue'>
+                <label id="ModifyUserName" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>变更时间：</th>
+            <td class='formValue'>
+                <label id="ModifyDate" />
+            </td>
+            <th class='formTitle'>审核状态码：</th>
+            <td class='formValue'>
+                <label id="AuditStatus" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>审核状态：</th>
+            <td class='formValue'>
+                <label id="AuditStatusName" />
+            </td>
+            <th class='formTitle'>备注：</th>
+            <td class='formValue'>
+                <label id="Remark" />
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+</form>

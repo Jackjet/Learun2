@@ -280,6 +280,7 @@ namespace LeaRun.WebApp.Areas.ExampleModule.Controllers
                     Filedata.SaveAs(fullFileName);
                     try
                     {
+                        
                         //文件信息写入数据库
                         entity.Create();
                         entity.NetworkFileId = fileGuid;

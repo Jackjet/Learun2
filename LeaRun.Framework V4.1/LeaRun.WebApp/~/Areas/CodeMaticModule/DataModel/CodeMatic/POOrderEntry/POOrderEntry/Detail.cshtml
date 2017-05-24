@@ -1,0 +1,143 @@
+@{
+    ViewBag.Title = "订单分录》明细页面";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        InitControl();
+    })
+    //得到一个对象实体
+    function InitControl() {
+        if (!!GetQuery('KeyValue')) {
+            AjaxJson("/CommonModule/POOrderEntry/SetForm", { KeyValue: GetQuery('KeyValue') }, function (data) {
+                SetWebControls(data);
+            });
+        }
+    }
+</script>
+<form id="form1" style="margin: 1px">
+    <table class="form">
+        <tr>
+            <th class='formTitle'>订单分录主键：</th>
+            <td class='formValue'>
+                <label id="POOrderEntryId" />
+            </td>
+            <th class='formTitle'>订单主键：</th>
+            <td class='formValue'>
+                <label id="POOrderId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>批号：</th>
+            <td class='formValue'>
+                <label id="BatchNo" />
+            </td>
+            <th class='formTitle'>物料主键：</th>
+            <td class='formValue'>
+                <label id="ItemId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>物料代码：</th>
+            <td class='formValue'>
+                <label id="ItemCode" />
+            </td>
+            <th class='formTitle'>物料名称：</th>
+            <td class='formValue'>
+                <label id="ItemName" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>物料型号：</th>
+            <td class='formValue'>
+                <label id="ItemModel" />
+            </td>
+            <th class='formTitle'>单位主键：</th>
+            <td class='formValue'>
+                <label id="UnitId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>数量：</th>
+            <td class='formValue'>
+                <label id="Qty" />
+            </td>
+            <th class='formTitle'>单价：</th>
+            <td class='formValue'>
+                <label id="Price" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>金额：</th>
+            <td class='formValue'>
+                <label id="PriceAmount" />
+            </td>
+            <th class='formTitle'>含税单价：</th>
+            <td class='formValue'>
+                <label id="PlusPrice" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>含税金额：</th>
+            <td class='formValue'>
+                <label id="PlusPriceAmount" />
+            </td>
+            <th class='formTitle'>税率(%)：</th>
+            <td class='formValue'>
+                <label id="CESS" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>税额：</th>
+            <td class='formValue'>
+                <label id="CESSAmount" />
+            </td>
+            <th class='formTitle'>说明：</th>
+            <td class='formValue'>
+                <label id="Description" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>排序码：</th>
+            <td class='formValue'>
+                <label id="SortCode" />
+            </td>
+            <th class='formTitle'>删除标记：</th>
+            <td class='formValue'>
+                <label id="DeleteMark" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>创建时间：</th>
+            <td class='formValue'>
+                <label id="CreateDate" />
+            </td>
+            <th class='formTitle'>创建用户主键：</th>
+            <td class='formValue'>
+                <label id="CreateUserId" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>创建用户：</th>
+            <td class='formValue'>
+                <label id="CreateUserName" />
+            </td>
+            <th class='formTitle'>修改时间：</th>
+            <td class='formValue'>
+                <label id="ModifyDate" />
+            </td>
+        </tr>
+        <tr>
+            <th class='formTitle'>修改用户主键：</th>
+            <td class='formValue'>
+                <label id="ModifyUserId" />
+            </td>
+            <th class='formTitle'>修改用户：</th>
+            <td class='formValue'>
+                <label id="ModifyUserName" />
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+</form>

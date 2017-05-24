@@ -32,7 +32,7 @@ namespace LeaRun.WebApp.Areas.CommonModule.Controllers
         /// 分配权限
         /// </summary>
         /// <returns></returns>
-        [ManagerPermission(PermissionMode.Enforce)]
+        //[ManagerPermission(PermissionMode.Enforce)]
         public ActionResult AllotPermission()
         {
             return View();

@@ -30,9 +30,9 @@ namespace LeaRun.Business
             StringBuilder WhereSql = new StringBuilder();
             if (!ManageProvider.Provider.Current().IsSystem)
             {
-                WhereSql.Append(" AND ( CompanyId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
-                WhereSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
-                WhereSql.Append(" ) )");
+                //WhereSql.Append(" AND ( CompanyId IN ( SELECT ResourceId FROM Base_DataScopePermission WHERE");
+                //WhereSql.Append(" ObjectId IN ('" + ManageProvider.Provider.Current().ObjectId.Replace(",", "','") + "') ");
+                //WhereSql.Append(" ) )");
             }
             WhereSql.Append(" ORDER BY SortCode ASC");
             return Repository().FindList(WhereSql.ToString());
